@@ -3,18 +3,20 @@ from behave import given, when, then, step
 import requests
 
 
-@given('we have posted an image')
+@given('we got all the books')
 def step_impl(context):
-    requests.post("http://localhost:8000/images", json={"foo": "bar"})
+    response = requests.get("http://localhost:8000/books")
+    context.books = response.json()
 
 
-@when('we retrieve the image')
+@when('we retrieve one book')
 def step_impl(context):
-    response = requests.get("http://localhost:8000/images")
+    book_id = context.books[0]['id']
+    response = requests.get("http://localhost:8000/books/%s" % book_id)
     context.response = response
 
 
-@then('we get both the existing and the newly posted image')
+@then('we get just the one book')
 def step_impl(context):
-    assert context.response.status_code == 201
-    assert context.response.text == '{"images": [{"href": "/images/1eaf6ef1-7f2d-4ecc-a8d5-6e8adba7cc0e.png"}, {"foo": "bar"}]}'
+    assert context.response.status_code == 200
+    assert context.response.json() == context.books[0]

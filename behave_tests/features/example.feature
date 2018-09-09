@@ -2,6 +2,6 @@
 Feature: getting stuff
 
   Scenario: Run a simple test
-    Given we have posted an image
-     When we retrieve the image
-     Then we get both the existing and the newly posted image
+    Given we got all the books
+     When we retrieve one book
+     Then we get just the one book

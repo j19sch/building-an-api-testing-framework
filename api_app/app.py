@@ -1,8 +1,8 @@
 import falcon
 
-from fountain_pens import Resource
+import books
 
 api = application = falcon.API()
 
-images = Resource()
-api.add_route('/images', images)
+api.add_route('/books', books.Collection())
+api.add_route('/books/{book_id}', books.Item())
