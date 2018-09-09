@@ -9,3 +9,4 @@
 - `http --json POST localhost:8000/books foo=bar`
 
 ## Behave tests
+- `behave`
