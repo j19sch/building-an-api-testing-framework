@@ -7,8 +7,8 @@
 - `waitress-serve --port=8000 api_app:app` (win)
 
 ### Simple testing
-- `http localhost:8000/books`
-- `http --json POST localhost:8000/books foo=bar`
+- `http -v localhost:8000/books`
+- `http -v --json POST localhost:8000/books foo=bar`
 
 ### Behave tests
 - `behave` to run
@@ -18,8 +18,9 @@
 ### App
 - validation on books/{id}
 - authentication
-- delete with authentication
-- put with authentication
+- add authentication to delete
+- add authentication to put
+- works in python 2 and python 3
 
 ### Exercises
 - keep up-to-date wrt App
