@@ -1,11 +1,8 @@
 import falcon
 from falcon import testing
 import pytest
-import logging
-from pprint import pformat
 
 from api_app.app import api
-from api_app.data import BOOKS
 
 
 @pytest.fixture

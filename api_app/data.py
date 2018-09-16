@@ -45,3 +45,6 @@ BOOKS = [
         'pages': 178
     }
 ]
+
+
+CREDS = {}

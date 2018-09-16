@@ -1,11 +1,13 @@
 import uuid
-import json
 import falcon
+from falcon.media.validators import jsonschema
+from schemas import book
 
 from data import BOOKS
+from hooks import validate_token
 
 
-class Collection(object):
+class Books(object):
     def __init__(self):
         self.books = BOOKS
 
@@ -17,28 +19,37 @@ class Collection(object):
                 resp.status = falcon.HTTP_NOT_FOUND
             else:
                 resp.status = falcon.HTTP_200
-                resp.body = json.dumps(requested_book, ensure_ascii=False)
+                resp.media = requested_book
         else:
             resp.status = falcon.HTTP_200
-            resp.body = json.dumps(self.books, ensure_ascii=False)
+            resp.media = self.books
 
+    @jsonschema.validate(book)
     def on_post(self, req, resp):
         new_book = req.media
         new_book["id"] = str(uuid.uuid4())
         self.books.append(new_book)
 
-        resp.body = json.dumps({"id": new_book["id"]}, ensure_ascii=False)
+        resp.media = {"id": new_book["id"]}
         resp.status = falcon.HTTP_201
 
+    @falcon.before(validate_token)
     def on_delete(self, req, resp, book_id):
-        self.books[:] = [book for book in self.books if book["id"] != book_id]
-        resp.status = falcon.HTTP_200
+        if [book for book in self.books if book['id'] == book_id]:
+            self.books[:] = [book for book in self.books if book["id"] != book_id]
+            resp.status = falcon.HTTP_200
+        else:
+            resp.status = falcon.HTTP_NOT_FOUND
 
+    @falcon.before(validate_token)
+    @jsonschema.validate(book)
     def on_put(self, req, resp, book_id):
         updated_book = req.media
         updated_book['id'] = book_id
 
-        self.books[:] = [updated_book if book['id'] == book_id else book for book in self.books]
-
-        resp.body = json.dumps(updated_book, ensure_ascii=False)
-        resp.status = falcon.HTTP_200
+        if [book for book in self.books if book['id'] == book_id]:
+            self.books[:] = [updated_book if book['id'] == book_id else book for book in self.books]
+            resp.media = updated_book
+            resp.status = falcon.HTTP_200
+        else:
+            resp.status = falcon.HTTP_NOT_FOUND

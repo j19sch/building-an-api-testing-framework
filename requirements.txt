@@ -4,3 +4,4 @@ pytest
 requests
 httpie
 behave
+jsonschema

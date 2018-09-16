@@ -1,7 +1,7 @@
 import falcon
 
 
-class Collection(object):
+class Ping(object):
     def __init__(self):
         pass
 

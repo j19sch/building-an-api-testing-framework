@@ -1,5 +1,7 @@
 # API app
 
+Important: this app is intended as a practice app for a testing workshop, so I took some shortcuts. ;-)
+
 ## Notes
 
 ### Running app
@@ -16,10 +18,6 @@
 
 ## ToDo list
 ### App
-- validation on books/{id}
-- authentication
-- add authentication to delete
-- add authentication to put
 - works in python 2 and python 3
 
 ### Exercises
