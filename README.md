@@ -62,10 +62,13 @@ Goal: add logging to find out why tests failed
 - Pytest-logfest (inc. disclaimer)
 - Pytest-apithon (publish first, inc. disclaimer)
 
+### More Pytest
+- pytest Quick Start Guide - Bruno Oliveira https://www.packtpub.com/web-development/pytest-quick-start-guide
+- Python Testing with pytest: Simple, Rapid, Effective, and Scalable - Brian Okken
+
 ### More Python
 - Python koans: https://github.com/gregmalcolm/python_koans
 - Python Crash Course https://ehmatthes.github.io/pcc/index.html
-- Pytest book
 - Hitchhiker Python book
 - Raymond Hettinger - Transforming Code into Beautiful, Idiomatic Python https://www.youtube.com/watch?v=OSGv2VnC0go
 - James Powell - So you want to be a Python expert? https://www.youtube.com/watch?v=cKPlPJyQrt4
