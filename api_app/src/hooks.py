@@ -1,5 +1,5 @@
 import falcon
-from data import CREDS
+from .data import CREDS
 
 
 def validate_token(req, resp, resource, params):

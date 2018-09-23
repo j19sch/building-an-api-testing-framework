@@ -4,8 +4,8 @@ import pytest
 
 import uuid
 
-from api_app.app import api
-from api_app.data import BOOKS
+from api_app.src.app import api
+from api_app.src.data import BOOKS
 
 
 @pytest.fixture

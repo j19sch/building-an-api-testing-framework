@@ -1,7 +1,7 @@
 import falcon
 import random
 import string
-from data import CREDS
+from .data import CREDS
 
 
 class Auth(object):

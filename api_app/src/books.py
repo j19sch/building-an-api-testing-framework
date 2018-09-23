@@ -1,10 +1,10 @@
 import uuid
 import falcon
 from falcon.media.validators import jsonschema
-from schemas import book
+from .schemas import book
 
-from data import BOOKS
-from hooks import validate_token
+from .data import BOOKS
+from .hooks import validate_token
 
 
 class Books(object):

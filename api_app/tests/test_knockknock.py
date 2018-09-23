@@ -2,7 +2,7 @@ import falcon
 from falcon import testing
 import pytest
 
-from api_app.app import api
+from api_app.src.app import api
 
 
 @pytest.fixture

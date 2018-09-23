@@ -1,4 +1,7 @@
+py2env/
+py3env/
 venv/
+
 .idea/
 *.pyc
 

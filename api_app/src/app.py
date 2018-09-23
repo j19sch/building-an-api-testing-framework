@@ -1,8 +1,6 @@
 import falcon
 
-import books
-import knockknock
-import auth
+from api_app.src import knockknock, books, auth
 
 api = application = falcon.API()
 

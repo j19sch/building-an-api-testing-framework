@@ -1,35 +1,96 @@
 # API app
 
-Important: this app is intended as a practice app for a testing workshop, so I took some shortcuts. ;-)
+### Disclaimer
+This app is intended as a practice app for a testing workshop, so I took some shortcuts. ;-)
 
-## Notes
+## Setup & installation and running the app
 
-### Running app
-- `gunicorn --reload api_app.app` (linux, mac)
-- `waitress-serve --port=8000 api_app:app` (win)
+### Setup & installation
 
-### Simple testing
-- `http -v localhost:8000/books`
-- `http -v --json POST localhost:8000/books foo=bar`
+#### Python and VirtualEnv
+- Install Python
+    - Python 2.7 is fine, If you're going to install, take Python 3 (it's the future).
+    - Instructions: https://ehmatthes.github.io/pcc/chapter_01/README.html (do not install Geany)
+- Install virtualenv (`pip install --user virtualenv` or `pip3 install --user virtualenv`)
+- Advanced text editor (Visual Studio Code (https://code.visualstudio.com/) is a good choice if you're not sure.)
 
-### Behave tests
-- `behave` to run
+#### Setup a virtual environment
+- Create virtualenv (`virtualenv venv` or `virtualenv -p python3 venv`)
+- Activate virtualenv (`source venv/bin/activate` or `venv\bin\activate.bat`)
 
+#### Download and install yjis repo
+- download this repository (download the zip file or `git clone`)
+- Install requirements.txt (`pip|pip3 install -r requirements.txt`)
+- Install gunicorn (linux, mac: `pip|pip3 install gunicorn`) or waitress (win: `pip|pip3 install waitress`)
+
+### Running the app
+- `gunicorn api_app.app` (linux, mac) or `waitress-serve --port=8000 api_app:app` (win)
+- smoke test by sending a GET request to `localhost:8000/knockknock`, e.g. with httpie: `http -v localhost:8000/knockknock`
+
+
+## Refernce materials
+- Python cheatsheet https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
+- Requests: http://docs.python-requests.org/en/master/
+- Pytest: https://docs.pytest.org/en/latest/contents.html and https://docs.pytest.org/en/latest/reference.html
+
+
+## Exercises
+- do exercises
+- play around
+- check `example_solutions` for a good way to solve the exercise
+
+### Exercise 1 - Requests library
+Goal: send a GET request and parse the repsonse
+
+### Exercise 2 - Pytest
+Goal: write a few tests
+
+### Exercise 3 - Api client
+Goal: add abstraction layer to avoid code duplication
+
+### Exercise 4 - Fixtures
+Goal: add fixtures for easy setup/teardown of tests
+
+### Exercise 5 - Logging
+Goal: add logging to find out why tests failed 
+
+
+## Extras
+
+### Extending the framework / my own framework
+- Pytest-logfest (inc. disclaimer)
+- Pytest-apithon (publish first, inc. disclaimer)
+
+### More Python
+- Python koans: https://github.com/gregmalcolm/python_koans
+- Python Crash Course https://ehmatthes.github.io/pcc/index.html
+- Pytest book
+- Hitchhiker Python book
+- James Powell - So you want to be a Python expert? https://www.youtube.com/watch?v=cKPlPJyQrt4
+
+### Existing frameworks
+- Tavern
+
+### BDD
+- Behave: `behave` to run
+- Lettuce
+- Robot framework
+
+
+
+
+# My notes
+- `gunicorn --reload api_app.app`
 
 ## ToDo list
-### App
-- works in python 2 and python 3
-
-### Exercises
-- keep up-to-date wrt App
-- ex3
-- ex4
-- ex5
-
-
-### Other
 - General explanation
 - Explanation for each exercise
-- Python cheat sheet
-- Resources
+- Evaluate Python cheat sheet
+- Expand Resources
 - Next steps
+
+
+## Acknowledgements
+- Mark Winteringham (@1bittester): restful-booker as inspiration (https://github.com/mwinteringham/restful-booker)
+- Eric Matthes for the Python Crash Course materials cheatsheet from the Python Crash Course (https://ehmatthes.github.io/pcc/cheatsheets/README.html)
+- Everyone contributing to pytest, requests, falcon
