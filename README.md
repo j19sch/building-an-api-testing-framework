@@ -35,6 +35,7 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 
 
 ## Exercises
+- see `API-DOCS.md` for a description of the API
 - do exercises
 - play around
 - check `example_solutions` for a good way to solve the exercise
@@ -68,13 +69,12 @@ Goal: add logging to find out why tests failed
 - Hitchhiker Python book
 - James Powell - So you want to be a Python expert? https://www.youtube.com/watch?v=cKPlPJyQrt4
 
-### Existing frameworks
+### Other API frameworks
 - Tavern
 
-### BDD
+### BDD frameworks
 - Behave: `behave` to run
-- Lettuce
-- Robot framework
+- Robot framework with robotframework-requests
 
 
 
