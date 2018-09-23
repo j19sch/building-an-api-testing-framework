@@ -24,7 +24,7 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 - Install gunicorn (linux, mac: `pip|pip3 install gunicorn`) or waitress (win: `pip|pip3 install waitress`)
 
 ### Running the app
-- `gunicorn api_app.app` (linux, mac) or `waitress-serve --port=8000 api_app:app` (win)
+- `gunicorn api_app.src.app` (linux, mac) or `waitress-serve --port=8000 api_app:src:app` (win)
 - smoke test by sending a GET request to `localhost:8000/knockknock`, e.g. with httpie: `http -v localhost:8000/knockknock`
 
 
@@ -80,7 +80,7 @@ Goal: add logging to find out why tests failed
 
 
 # My notes
-- `gunicorn --reload api_app.app`
+- `gunicorn --reload api_app.src.app`
 
 ## ToDo list
 - General explanation
