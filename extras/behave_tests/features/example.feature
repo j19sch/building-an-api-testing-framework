@@ -1,7 +1,9 @@
 # -- FILE: features/example.feature
-Feature: getting stuff
+Feature: Delete
 
-  Scenario: Run a simple test
+  Scenario: Deleting a book
     Given we got all the books
-     When we retrieve one book
-     Then we get just the one book
+      And we have valid credentials
+    When we delete one book
+    Then we get a 200 response
+      And the book is no longer present
