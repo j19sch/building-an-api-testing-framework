@@ -1,0 +1,40 @@
+---
+test_name: Delete a book
+
+stages:
+  - name: get all the books
+    request:
+      url: http://localhost:8000/books
+      method: GET
+    response:
+      status_code: 200
+      save:
+        body:
+          book: 0.id
+
+  - name: get a token
+    request:
+      url: http://localhost:8000/token/user
+      method: POST
+    response:
+      status_code: 201
+      save:
+        body:
+          token: token
+
+  - name: delete a book
+    request:
+      url: "http://localhost:8000/books/{book}"
+      method: DELETE
+      headers:
+        user: "user"
+        token: "{token}"
+    response:
+      status_code: 200
+
+  - name: check book is gone
+    request:
+      url: "http://localhost:8000/books/{book}"
+      method: GET
+    response:
+      status_code: 404

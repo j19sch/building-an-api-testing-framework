@@ -2,6 +2,9 @@ falcon
 gunicorn
 pytest
 requests
-httpie
-behave
 jsonschema
+
+httpie
+
+behave
+tavern
