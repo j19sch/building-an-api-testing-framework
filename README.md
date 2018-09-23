@@ -28,7 +28,7 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 - smoke test by sending a GET request to `localhost:8000/knockknock`, e.g. with httpie: `http -v localhost:8000/knockknock`
 
 
-## Refernce materials
+## Reference materials
 - Python cheatsheet https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
 - Requests: http://docs.python-requests.org/en/master/
 - Pytest: https://docs.pytest.org/en/latest/contents.html and https://docs.pytest.org/en/latest/reference.html
@@ -67,12 +67,11 @@ Goal: add logging to find out why tests failed
 - Python Crash Course https://ehmatthes.github.io/pcc/index.html
 - Pytest book
 - Hitchhiker Python book
+- Raymond Hettinger - Transforming Code into Beautiful, Idiomatic Python https://www.youtube.com/watch?v=OSGv2VnC0go
 - James Powell - So you want to be a Python expert? https://www.youtube.com/watch?v=cKPlPJyQrt4
 
-### Other API frameworks
+### Other testing frameworks
 - Tavern
-
-### BDD frameworks
 - Behave: `behave` to run
 - Robot framework with robotframework-requests
 
