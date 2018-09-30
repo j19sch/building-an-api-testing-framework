@@ -45,17 +45,19 @@ example response:
 ```
 
 **DELETE /book-id**  
+requires token  
 return code: 200
 
 
-**PUT /book-id**  
+**PUT /book-id**
+requires token    
 return code: 200  
 return body: updated book
 
 
-## /auth
+## /token
 
-**GET /user**  
+**POST /user**  
 return code: 200  
 return body: token
   

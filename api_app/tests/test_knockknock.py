@@ -14,4 +14,4 @@ def test_knockknock(client):
     response = client.simulate_get('/knockknock')
 
     assert response.status == falcon.HTTP_OK
-    assert response.text == "Who's there?\n"
+    assert response.text == "Who's there?"

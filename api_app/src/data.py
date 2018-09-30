@@ -11,7 +11,7 @@ BOOKS = [
     {
         'id': '978175e6-696d-413b-a55a-a45b7c139f3f',
         'title': 'Extreme Ownership',
-        'sub_title': 'How U.S. Navy SEALa LEad and Win',
+        'sub_title': 'How U.S. Navy SEALs Lead and Win',
         'author': 'Jocko Willink, Leif Babib',
         'publisher': 'St. Martin\'s Press',
         'year': 2017,

@@ -18,7 +18,7 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 - Create virtualenv (`virtualenv venv` or `virtualenv -p python3 venv`)
 - Activate virtualenv (`source venv/bin/activate` or `venv\bin\activate.bat`)
 
-#### Download and install yjis repo
+#### Download and install this repo
 - download this repository (download the zip file or `git clone`)
 - Install requirements.txt (`pip|pip3 install -r requirements.txt`)
 - Install gunicorn (linux, mac: `pip|pip3 install gunicorn`) or waitress (win: `pip|pip3 install waitress`)
@@ -59,8 +59,9 @@ Goal: add logging to find out why tests failed
 ## Extras
 
 ### Extending the framework / my own framework
+- jsonvalidation
 - Pytest-logfest (inc. disclaimer)
-- Pytest-apithon (publish first, inc. disclaimer)
+- Pytest-apithon (publish first, inc. disclaimer OR explain the hook in requests)
 
 ### More Pytest
 - pytest Quick Start Guide - Bruno Oliveira https://www.packtpub.com/web-development/pytest-quick-start-guide
