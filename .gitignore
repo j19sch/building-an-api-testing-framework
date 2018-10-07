@@ -6,3 +6,5 @@ venv/
 *.pyc
 
 .pytest_cache/
+
+robot-framework/*.[html|xml]

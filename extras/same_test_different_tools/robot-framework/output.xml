@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.6.6+ on linux)" generated="20181007 13:36:43.970">
+<suite id="s1" name="Robot-Framework" source="/home/jss/workspace/api-testing-framework/extras/same_test_different_tools/robot-framework">
+<suite id="s1-s1" name="Delete Book" source="/home/jss/workspace/api-testing-framework/extras/same_test_different_tools/robot-framework/delete_book.robot">
+<test id="s1-s1-t1" name="Delete book">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>ApiApp</arg>
+<arg>http://localhost:8000</arg>
+</arguments>
+<msg timestamp="20181007 13:36:44.024" level="INFO">Creating Session using : alias=ApiApp, url=http://localhost:8000, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20181007 13:36:44.024" endtime="20181007 13:36:44.024"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>ApiApp</arg>
+<arg>/books</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20181007 13:36:44.027" level="INFO">Get Request using : alias=ApiApp, uri=/books, headers=None json=None</msg>
+<msg timestamp="20181007 13:36:44.027" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20181007 13:36:44.024" endtime="20181007 13:36:44.027"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20181007 13:36:44.028" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20181007 13:36:44.027" endtime="20181007 13:36:44.028"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${book_id}</arg>
+<arg>${resp.json()[0]['id']}</arg>
+</arguments>
+<msg timestamp="20181007 13:36:44.028" level="INFO">${book_id} = 978175e6-696d-413b-a55a-a45b7c139f3f</msg>
+<status status="PASS" starttime="20181007 13:36:44.028" endtime="20181007 13:36:44.028"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the</doc>
+<arguments>
+<arg>ApiApp</arg>
+<arg>/token/${user}</arg>
+<arg>data=None</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20181007 13:36:44.030" level="INFO">Post Request using : alias=ApiApp, uri=/token/bob, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
+<msg timestamp="20181007 13:36:44.030" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20181007 13:36:44.029" endtime="20181007 13:36:44.030"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${token}</arg>
+<arg>${resp.json()['token']}</arg>
+</arguments>
+<msg timestamp="20181007 13:36:44.031" level="INFO">${token} = aPtvdhWFBYplZEw</msg>
+<status status="PASS" starttime="20181007 13:36:44.031" endtime="20181007 13:36:44.031"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>201</arg>
+</arguments>
+<msg timestamp="20181007 13:36:44.031" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20181007 13:36:44.031" endtime="20181007 13:36:44.032"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>user=${user}</arg>
+<arg>token=${token}</arg>
+</arguments>
+<assign>
+<var>${headers}</var>
+</assign>
+<msg timestamp="20181007 13:36:44.032" level="INFO">${headers} = {'user': 'bob', 'token': 'aPtvdhWFBYplZEw'}</msg>
+<status status="PASS" starttime="20181007 13:36:44.032" endtime="20181007 13:36:44.032"></status>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<doc>Send a DELETE request on the session object found using the</doc>
+<arguments>
+<arg>ApiApp</arg>
+<arg>/books/${book_id}</arg>
+<arg>headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20181007 13:36:44.034" level="INFO">Delete Request using : alias=ApiApp, uri=/books/978175e6-696d-413b-a55a-a45b7c139f3f, data=(),                     headers={'user': 'bob', 'token': 'aPtvdhWFBYplZEw'}, allow_redirects=True </msg>
+<msg timestamp="20181007 13:36:44.034" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20181007 13:36:44.032" endtime="20181007 13:36:44.034"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20181007 13:36:44.034" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20181007 13:36:44.034" endtime="20181007 13:36:44.035"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>ApiApp</arg>
+<arg>/books/${book_id}</arg>
+</arguments>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20181007 13:36:44.036" level="INFO">Get Request using : alias=ApiApp, uri=/books/978175e6-696d-413b-a55a-a45b7c139f3f, headers=None json=None</msg>
+<msg timestamp="20181007 13:36:44.036" level="INFO">${resp} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20181007 13:36:44.035" endtime="20181007 13:36:44.036"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${resp.status_code}</arg>
+<arg>404</arg>
+</arguments>
+<msg timestamp="20181007 13:36:44.037" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20181007 13:36:44.036" endtime="20181007 13:36:44.037"></status>
+</kw>
+<status status="PASS" starttime="20181007 13:36:44.023" endtime="20181007 13:36:44.037" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20181007 13:36:43.985" endtime="20181007 13:36:44.037"></status>
+</suite>
+<status status="PASS" starttime="20181007 13:36:43.970" endtime="20181007 13:36:44.037"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Robot-Framework">Robot-Framework</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Delete Book">Robot-Framework.Delete Book</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

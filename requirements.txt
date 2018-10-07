@@ -2,9 +2,11 @@ falcon
 gunicorn
 pytest
 requests
+
 jsonschema
 
 httpie
 
 behave
+robotframework-requests
 tavern
