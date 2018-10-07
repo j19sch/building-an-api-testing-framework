@@ -40,6 +40,14 @@ def test_get_single_book(client):
     assert response.json == expected
 
 
+def test_get_single_book_invalid_uuid(client):
+    response = client.simulate_get('/books/%s' % 'invalid')
+
+    assert response.status == falcon.HTTP_BAD_REQUEST
+    assert response.json['title'] == '400 Bad Request'
+    assert response.json['description'] == 'Not a valid uuid.'
+
+
 def test_post_book(client):
     new_book = {
         "author": "Neil Gaiman",
@@ -116,6 +124,15 @@ def test_delete_book_wrong_token(client, get_user_and_token):
     assert response.status == falcon.HTTP_UNAUTHORIZED
 
 
+def test_delete_book_invalid_uuid(client, get_user_and_token):
+    user, token = get_user_and_token
+
+    response = client.simulate_delete('/books/%s' % 'invalid', headers={'User': user, 'Token': token})
+    assert response.status == falcon.HTTP_BAD_REQUEST
+    assert response.json['title'] == '400 Bad Request'
+    assert response.json['description'] == 'Not a valid uuid.'
+
+
 def test_put_book(client, get_user_and_token):
     book_to_update = BOOKS[0].copy()
     book_id = book_to_update.pop('id', None)
@@ -159,3 +176,12 @@ def test_put_book_invalid_request(client, get_user_and_token):
     assert response.status == falcon.HTTP_BAD_REQUEST
     assert response.json['title'] == "Failed data validation"
     assert response.json['description'] == "'author' is a required property"
+
+
+def test_put_book_invalid_uuid(client, get_user_and_token):
+    user, token = get_user_and_token
+
+    response = client.simulate_put('/books/%s' % 'invalid', json={}, headers={'User': user, 'Token': token})
+    assert response.status == falcon.HTTP_BAD_REQUEST
+    assert response.json['title'] == '400 Bad Request'
+    assert response.json['description'] == 'Not a valid uuid.'

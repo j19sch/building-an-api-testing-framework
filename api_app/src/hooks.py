@@ -1,4 +1,6 @@
 import falcon
+import uuid
+
 from .data import CREDS
 
 
@@ -18,3 +20,10 @@ def validate_token(req, resp, resource, params):
             raise falcon.HTTPUnauthorized
         else:
             pass
+
+
+def validate_uuid(req, resp, resource, params):
+    try:
+        uuid.UUID(params['book_id'], version=4)
+    except ValueError:
+        raise falcon.HTTPBadRequest(description="Not a valid uuid.")

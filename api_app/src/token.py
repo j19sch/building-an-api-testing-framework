@@ -4,7 +4,7 @@ import string
 from .data import CREDS
 
 
-class Auth(object):
+class Token(object):
     def __init__(self):
         self.creds = CREDS
 
