@@ -5,7 +5,7 @@ class KnockKnock(object):
     def __init__(self):
         self.url = 'http://localhost:8000/knockknock'
 
-    def get(self):
+    def knock(self):
         return requests.get(self.url)
 
 
@@ -16,7 +16,7 @@ class Books(object):
     def get_all(self):
         return requests.get(self.url)
 
-    def get_one(self, book_id):
+    def get_one_book(self, book_id):
         return requests.get(self.url + '/' + book_id)
 
     def post_book(self, new_book):

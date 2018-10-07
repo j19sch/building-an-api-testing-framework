@@ -3,7 +3,7 @@ from example_solutions import apiclient_classes
 
 def test_knockknock():
     knockknock_api = apiclient_classes.KnockKnock()
-    response = knockknock_api.get()
+    response = knockknock_api.knock()
     assert response.status_code == 200
     assert response.text == "Who's there?"
 
@@ -19,7 +19,7 @@ def test_get_all_books():
 
 def test_get_one_book():
     books_api = apiclient_classes.Books()
-    response = books_api.get_one('8b91b84b-04e4-4496-9635-66468c2f3e41')
+    response = books_api.get_one_book('8b91b84b-04e4-4496-9635-66468c2f3e41')
     assert response.status_code == 200
     assert response.json() == {
         'id': '8b91b84b-04e4-4496-9635-66468c2f3e41',
