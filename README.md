@@ -35,7 +35,7 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 
 ## Exercises
 - see `API-docs.md` for a description of the API
-- see `Exercises.md` for the different exercises
+- see `./exercises` for the different exercises
 - check `./example_solutions` for example solutions to the exercises
 
 ### Reference materials

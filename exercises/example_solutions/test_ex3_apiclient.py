@@ -1,4 +1,4 @@
-from example_solutions import apiclients
+from exercises.example_solutions import apiclients
 
 
 def test_knockknock():
