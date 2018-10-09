@@ -1,15 +1,15 @@
-from example_solutions import apiclient_classes
+from example_solutions import apiclients
 
 
 def test_knockknock():
-    knockknock_api = apiclient_classes.KnockKnock()
+    knockknock_api = apiclients.KnockKnock()
     response = knockknock_api.knock()
     assert response.status_code == 200
     assert response.text == "Who's there?"
 
 
 def test_get_all_books():
-    books_api = apiclient_classes.Books()
+    books_api = apiclients.Books()
     response = books_api.get_all()
     assert response.status_code == 200
     books = response.json()
@@ -18,7 +18,7 @@ def test_get_all_books():
 
 
 def test_get_one_book():
-    books_api = apiclient_classes.Books()
+    books_api = apiclients.Books()
     response = books_api.get_one_book('8b91b84b-04e4-4496-9635-66468c2f3e41')
     assert response.status_code == 200
     assert response.json() == {
@@ -42,14 +42,14 @@ def post_new_book():
         "year": 2017
     }
 
-    books_api = apiclient_classes.Books()
+    books_api = apiclients.Books()
     response = books_api.post_book(new_book)
     assert response.status_code == 201
     assert response.json()['id'] is not None
 
 
 def test_get_token_for_user():
-    token_api = apiclient_classes.Token()
+    token_api = apiclients.Token()
     response = token_api.get_token('alice')
     print(response.status_code, response.json())
     assert response.status_code == 201

@@ -20,7 +20,10 @@ class Books(object):
         return requests.get(self.url + '/' + book_id)
 
     def post_book(self, new_book):
-        return requests.post(self.url + '/books', json=new_book)
+        return requests.post(self.url, json=new_book)
+
+    def delete_book(self, book_id, user, token):
+        return requests.delete(self.url + '/' + book_id, headers={'user': user, 'token': token})
 
 
 class Token(object):

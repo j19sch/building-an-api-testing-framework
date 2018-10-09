@@ -1,12 +1,12 @@
 import pytest
 
-from . import apiclient_classes_logging
+from . import apiclients_with_logging
 
 
 @pytest.fixture()
 def creds():
     user = 'bob'
-    token_api = apiclient_classes_logging.Token()
+    token_api = apiclients_with_logging.Token()
     response = token_api.get_token(user)
     token = response.json()['token']
     return user, token
@@ -23,7 +23,7 @@ def new_book_id():
         "year": 2017
     }
 
-    books_api = apiclient_classes_logging.Books()
+    books_api = apiclients_with_logging.Books()
     response = books_api.post_book(new_book)
     assert response.status_code == 201
 
@@ -32,7 +32,7 @@ def new_book_id():
 
 def test_delete_book(new_book_id, creds):
     user, token = creds
-    books_api = apiclient_classes_logging.Books()
+    books_api = apiclients_with_logging.Books()
 
     response = books_api.delete_book(new_book_id, user, token)
     assert response.status_code == 200
