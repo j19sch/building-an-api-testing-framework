@@ -11,7 +11,7 @@ However, because of something we want to do in exercise 5, you should use classe
 ### Apiclient class
 You can define a class as follows:
 ```
-Class MyClass(object):  # def MyClass(): in Python 3
+class MyClass(object):  # def MyClass(): in Python 3
     def __init__(self):
         pass  # this code is run when instantiating the class
     
