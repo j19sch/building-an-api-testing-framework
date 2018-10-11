@@ -81,4 +81,5 @@ ToDo: create book to delete in test, instead of deleting first on of retrieved b
 ## Acknowledgements
 - Mark Winteringham (@1bittester): restful-booker as inspiration (https://github.com/mwinteringham/restful-booker)
 - Eric Matthes for the Python Crash Course materials cheatsheet from the Python Crash Course (https://ehmatthes.github.io/pcc/cheatsheets/README.html)
+- Elizabeth Zagroba: tried it. More stuff works and is spelled correctly now.
 - Everyone contributing to pytest, requests, falcon
