@@ -25,7 +25,7 @@ The value for that key is a list of functions that are run for every response.
 By adding the name of a function to that list in the `__init__` of a subclass of `requests.session`,
  you can use that function to take care of the logging of each request and response.
  
-Useful attributes of the `repsonse` object:
+Useful attributes of the `response` object:
 - `response.status_code`
 - `response.headers`
 - `response.text`
