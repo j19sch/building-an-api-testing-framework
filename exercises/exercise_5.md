@@ -30,9 +30,9 @@ Useful attributes of the `response` object:
 - `response.headers`
 - `response.text`
 - `response.json()` (json parsed to a Python dictionary)
-- `repsonse.request.url`
-- `repsonse.request.method`
-- `repsonse.request.headers`
-- `repsonse.request.body`
+- `response.request.url`
+- `response.request.method`
+- `response.request.headers`
+- `response.request.body`
 
 Docs: http://docs.python-requests.org/en/master/user/advanced/#event-hooks
