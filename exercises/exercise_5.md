@@ -1,7 +1,7 @@
 
 ## Exercise 5 - logging
 
-**Goal**: add logging so allow you to debug more easily
+**Goal**: add logging so you can debug more easily
 
 ### Assignment
 Add logging to your tests by using the requests hook.
