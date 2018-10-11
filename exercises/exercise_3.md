@@ -5,7 +5,7 @@
 Create an API clients module as an abstraction layer between the API and your tests.  
 
 You could do this using either functions or classes.
-However, because of something we want to do in exercise 5, you should use classes
+However, because of something we want to do in exercise 5, you should use classes.
 
 
 ### Apiclient class
