@@ -1,5 +1,6 @@
 ## Exercise 1 - requests library
-**Goal**: become familiar with the requests library
+**Goal**: become familiar with the requests library  
+**Purpose**: interacting programitically with an API
 
 ### Assignment
 Print the status code and response for the following API calls:
@@ -10,7 +11,8 @@ Print the status code and response for the following API calls:
 - POST auth
 
 ### The requests library
-The requests library allows you to send API requests with `requests.get(url)`, `requests.post(url, json=python_dict)`, etc.  
+The requests library allows you to send API requests with `requests.get(url)`,
+`requests.post(url, json=python_dict)`, etc.  
 This will return a `response` object with (among other things) the following attributes:
 - `response.status_code`
 - `response.text`

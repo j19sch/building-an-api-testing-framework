@@ -1,8 +1,10 @@
 ## Exercise 3 - API clients
-**Goal**: build an interface between the API and your tests
+**Goal**: build an interface between the API and your tests  
+**Purpose**: separate the test code from the API code (separation of concerns,
+don't repeat yourself)
 
 ### Assignment
-Create an API clients module as an abstraction layer between the API and your tests.  
+Create an API client module as an abstraction layer (or interface) between the API and your tests.  
 
 You could do this using either functions or classes.
 However, because of something we want to do in exercise 5, you should use classes.

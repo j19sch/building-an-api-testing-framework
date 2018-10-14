@@ -1,4 +1,4 @@
-# API app
+# The "Books" API app - build an API testing framework in Python
 
 **Disclaimer**: 
 This app is intended as a practice app for a testing workshop, so I took some shortcuts. ;-)
@@ -9,40 +9,47 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 ### Python and VirtualEnv
 - Install Python
     - Python 2.7 is fine. If you need to install Python, take Python 3 (it's the future).
-    - Instructions: https://ehmatthes.github.io/pcc/chapter_01/README.html (do not install Geany)
-- Install virtualenv (`pip|pip3 install --user virtualenv`)
+    - Instructions: https://ehmatthes.github.io/pcc/chapter_01/README.html (no need to install Geany)
+- Install virtualenv (`pip install --user virtualenv`)
 
 ### Setup a virtual environment
 - Create virtualenv (`virtualenv venv`)
+	- If you have both Python 2.7 and Python 3 installed, and you want to use Python 3:
+	`virtualenv -p python3 venv`
 - Activate virtualenv (linux, mac: `source venv/bin/activate`) or (win: `venv\bin\activate.bat`)
 
 ### Download and install this repo
 - download this repository (download the zip file or `git clone`)
-- Install requirements.txt (`pip|pip3 install -r requirements.txt`)
-- Install gunicorn (linux, mac: `pip|pip3 install gunicorn`) or waitress (win: `pip|pip3 install waitress`)
+- Install requirements.txt (`pip install -r requirements.txt`)
+- Install gunicorn (linux, mac: `pip install gunicorn`) or
+waitress (win: `pip install waitress`)
 
 ### Running the app
 - linux, mac: `gunicorn api_app.src.app` or win: `waitress-serve --port=8000 api_app:src:app`
-- smoke test by using your browser to go to `localhost:8000/knockknock` 
+- smoke test by using your browser to go to `localhost:8000/knockknock`
+- the easiest way to restart the app is to kill the process (`ctrl/cmd+c`) and start it again
 
 ### Advaced text editor
 - Any advanced text editor with the following features will do:
     - syntax highlighting (easier to read)
     - word completion (avoids typos in names of variables, functions and methods)
-- If you're note sure which one to use, Visual Studio Code is a good choice (https://code.visualstudio.com/)
+- If you're note sure which one to use, Visual Studio Code is a good choice
+(https://code.visualstudio.com/)
 - Using an IDE like PyCharm is fine too.
 
 
 
 ## Exercises
-- see `API-docs.md` for a description of the API
-- see `./exercises` for the different exercises
-- see `./exercises/example_solutions` for example solutions to the exercises
+See `./exercises/exercises_readme.md` for more information about the exercises.
 
 ### Reference materials
-- Python cheatsheet https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
-- Requests: http://docs.python-requests.org/en/master/
-- Pytest: https://docs.pytest.org/en/latest/contents.html and https://docs.pytest.org/en/latest/reference.html
+- API documentation for the app: `API-docs.md`
+- Python cheatsheet
+https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
+- Requests:
+http://docs.python-requests.org/en/master/
+- Pytest:
+https://docs.pytest.org/en/latest/contents.html and https://docs.pytest.org/en/latest/reference.html
 
 
 
@@ -59,21 +66,26 @@ ToDo: create book to delete in test, instead of deleting first on of retrieved b
 
 ### next steps
 - jsonvalidation
+- (todo) add a file handler to the logging
 - (todo) Pytest-logfest (inc. disclaimer)
 
 ### More Pytest
-- Pytest Quick Start Guide - Bruno Oliveira https://www.packtpub.com/web-development/pytest-quick-start-guide
+- Pytest Quick Start Guide - Bruno Oliveira
+https://www.packtpub.com/web-development/pytest-quick-start-guide
 - Python Testing with pytest: Simple, Rapid, Effective, and Scalable - Brian Okken
 
 ### More Python
 - Python koans: https://github.com/gregmalcolm/python_koans
-- Raymond Hettinger - Transforming Code into Beautiful, Idiomatic Python https://www.youtube.com/watch?v=OSGv2VnC0go
+- Raymond Hettinger - Transforming Code into Beautiful, Idiomatic
+Python https://www.youtube.com/watch?v=OSGv2VnC0go
 - James Powell - So you want to be a Python expert? https://www.youtube.com/watch?v=cKPlPJyQrt4
 
 
 
 ## Acknowledgements
-- Mark Winteringham (@1bittester): restful-booker as inspiration (https://github.com/mwinteringham/restful-booker)
-- Eric Matthes for the Python Crash Course materials cheatsheet from the Python Crash Course (https://ehmatthes.github.io/pcc/cheatsheets/README.html)
+- Mark Winteringham (@1bittester): restful-booker as inspiration
+(https://github.com/mwinteringham/restful-booker)
+- Eric Matthes for the Python Crash Course materials cheatsheet from the Python Crash Course
+(https://ehmatthes.github.io/pcc/cheatsheets/README.html)
 - Elizabeth Zagroba: tried it. More stuff works and is spelled correctly now.
 - Everyone contributing to pytest, requests, falcon

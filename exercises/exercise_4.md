@@ -1,6 +1,7 @@
-
 ## Exercise 4 - fixtures
-**Goal**: use fixtures for test setup and teardown
+**Goal**: use fixtures for test setup and teardown  
+**Purpose**: separate setup & teardown from the tests (separation of concerns,
+don't repeat yourself)
 
 ### Assignment
 Create a test using fixtures in which you:
@@ -9,7 +10,8 @@ Create a test using fixtures in which you:
 - delete that book
 
 ### Fixtures
-Pytest allows you to define fixtures for test setup and teardown using the `@pytest.fixture` decorator.
+Pytest allows you to define fixtures for test setup and teardown using the
+`@pytest.fixture` decorator.
 Not only tests can use fixtures, fixtures can also use other fixtures.
 
 Example:
