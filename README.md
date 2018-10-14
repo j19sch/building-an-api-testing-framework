@@ -21,11 +21,11 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 - Install requirements.txt (`pip|pip3 install -r requirements.txt`)
 - Install gunicorn (linux, mac: `pip|pip3 install gunicorn`) or waitress (win: `pip|pip3 install waitress`)
 
-## Running the app
+### Running the app
 - linux, mac: `gunicorn api_app.src.app` or win: `waitress-serve --port=8000 api_app:src:app`
 - smoke test by using your browser to go to `localhost:8000/knockknock` 
 
-## Advaced text editor
+### Advaced text editor
 - Any advanced text editor with the following features will do:
     - syntax highlighting (easier to read)
     - word completion (avoids typos in names of variables, functions and methods)
@@ -33,10 +33,11 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 - Using an IDE like PyCharm is fine too.
 
 
+
 ## Exercises
 - see `API-docs.md` for a description of the API
 - see `./exercises` for the different exercises
-- check `./example_solutions` for example solutions to the exercises
+- see `./exercises/example_solutions` for example solutions to the exercises
 
 ### Reference materials
 - Python cheatsheet https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc.pdf
@@ -56,25 +57,18 @@ Test deleting a book, implemented with:
 
 ToDo: create book to delete in test, instead of deleting first on of retrieved books
 
-
 ### next steps
 - jsonvalidation
 - (todo) Pytest-logfest (inc. disclaimer)
 
 ### More Pytest
-- pytest Quick Start Guide - Bruno Oliveira https://www.packtpub.com/web-development/pytest-quick-start-guide
+- Pytest Quick Start Guide - Bruno Oliveira https://www.packtpub.com/web-development/pytest-quick-start-guide
 - Python Testing with pytest: Simple, Rapid, Effective, and Scalable - Brian Okken
 
 ### More Python
 - Python koans: https://github.com/gregmalcolm/python_koans
 - Raymond Hettinger - Transforming Code into Beautiful, Idiomatic Python https://www.youtube.com/watch?v=OSGv2VnC0go
 - James Powell - So you want to be a Python expert? https://www.youtube.com/watch?v=cKPlPJyQrt4
-
-
-
-# My notes
-- `gunicorn --reload api_app.src.app`
-- `kill -HUP <masterpid>`
 
 
 
