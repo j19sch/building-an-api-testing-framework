@@ -10,5 +10,5 @@ to most clearly illustrate the purpose of the exercise.
 
 As you proceed through the exercises and as your framework and tests grow, you will probably
 need to refactor what you have so far. So you have two options:
-- keep editing the same file
-- create a new file for each exercise copy-pasting what you need from the previous exercise
+- keep editing the same file throughout the exercises;
+- create a new file for each exercise copy-pasting what you need from the previous exercise.

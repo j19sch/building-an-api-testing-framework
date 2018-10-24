@@ -1,11 +1,12 @@
 falcon
-gunicorn
 pytest
 requests
 
-jsonschema
+# also needed:
+# gunciorn (linux, mac)
+# waitress (windows)
 
-httpie
+jsonschema
 
 behave
 robotframework-requests

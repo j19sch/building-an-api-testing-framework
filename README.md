@@ -6,6 +6,8 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 
 ## Setup & installation
 
+If you run into any issues with the steps below, please let me know at j19sch@gmail.com.
+
 ### Python and VirtualEnv
 - Install Python
     - Python 2.7 is fine. If you need to install Python, take Python 3 (it's the future).
@@ -19,13 +21,14 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 - Activate virtualenv (linux, mac: `source venv/bin/activate`) or (win: `venv\bin\activate.bat`)
 
 ### Download and install this repo
-- download this repository (download the zip file or `git clone`)
+- download this repository by clicking the green `Clone or download` button at the top (make sure you update to
+the latest version right before the workshop) 
 - Install requirements.txt (`pip install -r requirements.txt`)
 - Install gunicorn (linux, mac: `pip install gunicorn`) or
 waitress (win: `pip install waitress`)
 
 ### Running the app
-- linux, mac: `gunicorn api_app.src.app` or win: `waitress-serve --port=8000 api_app:src:app`
+- linux, mac: `gunicorn api_app.src.app` or win: `waitress-serve --port=8000 api_app.src.app:api`
 - smoke test by using your browser to go to `localhost:8000/knockknock`
 - the easiest way to restart the app is to kill the process (`ctrl/cmd+c`) and start it again
 
@@ -83,7 +86,7 @@ Python https://www.youtube.com/watch?v=OSGv2VnC0go
 
 
 ## Acknowledgements
-- Mark Winteringham (@1bittester): restful-booker as inspiration
+- Mark Winteringham (@2bittester): restful-booker as inspiration
 (https://github.com/mwinteringham/restful-booker)
 - Eric Matthes for the Python Crash Course materials cheatsheet from the Python Crash Course
 (https://ehmatthes.github.io/pcc/cheatsheets/README.html)
