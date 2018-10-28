@@ -1,5 +1,5 @@
 ## Exercise 5 - logging
-**Goal**: add logging to record requests and responses
+**Goal**: add logging to record requests and responses  
 **Purpose**: be able to see which requests and responses are being sent
 
 ### Assignment

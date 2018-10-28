@@ -1,6 +1,6 @@
 ## Exercise 2 - pytest
 **Goal**: become familiar with pytest  
-**Purpose**: running tests
+**Purpose**: building and running tests
 
 ### Assignment
 Build tests for the API calls of exercise 1.
