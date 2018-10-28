@@ -1,4 +1,3 @@
-
 ## Exercise 2 - pytest
 **Goal**: become familiar with pytest  
 **Purpose**: running tests

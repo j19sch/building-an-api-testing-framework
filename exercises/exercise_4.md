@@ -9,16 +9,15 @@ Create an API client module as an abstraction layer (or interface) between the A
 You could do this using either functions or classes.
 However, because of something we want to do in exercise 5, you should use classes.
 
-
 ### Apiclient class
 You can define a class as follows:
 ```
-class MyClass(object):  # def MyClass(): in Python 3
+class MyClass(object):  # class MyClass(): in Python 3
     def __init__(self):
-        pass  # this code is run when instantiating the class
+        pass  # this code is run when instantiating the class my_class = MyClass()
     
     def my_method(self):
-        pass  # this code is run with my_class = MyClass(); my_class.my_method()
+        pass  # this code is run for an instance with my_class.my_method()
 
 ```
 

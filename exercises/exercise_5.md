@@ -1,14 +1,13 @@
 ## Exercise 5 - logging
 **Goal**: add logging to record requests and responses
-**Purpose**: be able to debug the tests
+**Purpose**: be able to see which requests and responses are being sent
 
 ### Assignment
 Add logging to your tests by using the requests hook.
 
 ### Logging
 To create log records, you'll need to import the logging module. After that you can easily create
-log records of 
-different log levels, e.g. `logging.info("all good")` or `logging.critical("run away!")`
+log records of different log levels, e.g. `logging.info("all good")` or `logging.critical("run away!")`
 
 When a test results in an error or a fail, pytest will automatically output the created log records.
 If you want to see the log records regardless of test result, use `pytest --log-cli-level debug`.
@@ -17,7 +16,6 @@ Docs:
 - https://docs.python.org/2/library/logging.html
 - https://docs.python.org/3/library/logging.html
 - https://docs.pytest.org/en/latest/logging.html
-
 
 ### Requests hook
 The `requests.Session` object has a `hook` attribute containing a dictionary with only

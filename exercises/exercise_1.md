@@ -1,6 +1,6 @@
 ## Exercise 1 - requests library
 **Goal**: become familiar with the requests library  
-**Purpose**: interacting programitically with an API
+**Purpose**: interacting programmatically with an API
 
 ### Assignment
 Print the status code and response for the following API calls:
