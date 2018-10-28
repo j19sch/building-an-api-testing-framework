@@ -1,27 +1,27 @@
-## Exercise 3 - API clients
-**Goal**: build an interface between the API and your tests  
-**Purpose**: separate the test code from the API code (separation of concerns,
+## Exercise 3 - fixtures
+**Goal**: use fixtures for test setup and teardown  
+**Purpose**: separate setup & teardown from the tests (separation of concerns,
 don't repeat yourself)
 
 ### Assignment
-Create an API client module as an abstraction layer (or interface) between the API and your tests.  
+Create a test using fixtures in which you:
+- get a token
+- create a book
+- delete that book
 
-You could do this using either functions or classes.
-However, because of something we want to do in exercise 5, you should use classes.
+### Fixtures
+Pytest allows you to define fixtures for test setup and teardown using the
+`@pytest.fixture` decorator.
+Not only tests can use fixtures, fixtures can also use other fixtures.
 
-
-### Apiclient class
-You can define a class as follows:
+Example:
 ```
-class MyClass(object):  # def MyClass(): in Python 3
-    def __init__(self):
-        pass  # this code is run when instantiating the class
+@pytest.fixture
+def my_favourite_number():
+    return 73
     
-    def my_method(self):
-        pass  # this code is run with my_class = MyClass(); my_class.my_method()
-
+def test_my_favourite_number_is_73(my_favourite_number):
+    assert my_favourite_number == 73
 ```
 
-Docs:
-- https://docs.python.org/3/tutorial/classes.html
-- https://docs.python.org/2/tutorial/classes.html
+Docs: https://docs.pytest.org/en/latest/fixture.html

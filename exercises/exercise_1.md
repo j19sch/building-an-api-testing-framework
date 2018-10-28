@@ -18,4 +18,6 @@ This will return a `response` object with (among other things) the following att
 - `response.text`
 - `response.json()` (json parsed to a Python dictionary)
 
+Use `python <your_file>.py` to run your code.
+
 Docs for the requests library: http://docs.python-requests.org/en/master/

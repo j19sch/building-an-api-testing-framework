@@ -7,7 +7,6 @@ class ApiClient(requests.Session):
         super(ApiClient, self).__init__()
         self.hooks['response'].append(self._log_details)
 
-    # part of exercise 5
     @staticmethod
     def _log_details(r, *args, **kwargs):
         logging.info("{}: {}".format(r.request.method, r.request.url))
@@ -44,7 +43,6 @@ class Books(ApiClient):
     def post_book(self, new_book):
         return self.post(self.url, json=new_book)
 
-    # part of exercise 4
     def delete_book(self, book_id, user, token):
         return self.delete(self.url + '/' + book_id, headers={'user': user, 'token': token})
 

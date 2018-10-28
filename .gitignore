@@ -1,6 +1,6 @@
 # virtual environments
-py2env/
-py3env/
+py2venv/
+py3venv/
 venv/
 
 # PyCharm

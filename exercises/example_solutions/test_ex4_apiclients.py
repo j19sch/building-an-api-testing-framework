@@ -1,23 +1,23 @@
 import pytest
 
-from . import apiclients
+from . import apiclients_ex4
 
 
-@pytest.fixture()
+@pytest.fixture
+def books_api():
+    return apiclients_ex4.Books()
+
+
+@pytest.fixture
 def creds():
     user = 'bob'
-    token_api = apiclients.Token()
+    token_api = apiclients_ex4.Token()
     response = token_api.get_token(user)
     token = response.json()['token']
     return user, token
 
 
-@pytest.fixture()
-def books_api():
-    return apiclients.Books()
-
-
-@pytest.fixture()
+@pytest.fixture
 def new_book_id(books_api):
     new_book = {
         "author": "Neil Gaiman",
@@ -34,7 +34,7 @@ def new_book_id(books_api):
     return response.json()['id']
 
 
-def test_delete_book(new_book_id, creds, books_api):
+def test_delete_book(books_api, creds, new_book_id):
     user, token = creds
 
     response = books_api.delete_book(new_book_id, user, token)
