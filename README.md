@@ -62,20 +62,22 @@ https://docs.pytest.org/en/latest/contents.html and https://docs.pytest.org/en/l
 Test deleting a book, implemented with:
 - behave: `behave <path>`
 - pytest and requests: `pytest <path>`
-- robot framework with roborframework-requests: `robot <path>`
+- robot framework with robotframework-requests: `robot <path>`
 - tavern: `pytest <path>`
 
 ToDo: create book to delete in test, instead of deleting first on of retrieved books
 
 ### next steps
-- jsonvalidation
-- (todo) add a file handler to the logging
-- (todo) Pytest-logfest (inc. disclaimer)
+- validating json with jsonschema
+- debugging test code
+- (todo) test with parametrization
+- (todo) add a file handler to the logging, mention pytest-logfest (inc. disclaimer)
 
 ### More Pytest
 - Pytest Quick Start Guide - Bruno Oliveira
 https://www.packtpub.com/web-development/pytest-quick-start-guide
 - Python Testing with pytest: Simple, Rapid, Effective, and Scalable - Brian Okken
+https://pragprog.com/book/bopytest/python-testing-with-pytest
 
 ### More Python
 - Python koans: https://github.com/gregmalcolm/python_koans

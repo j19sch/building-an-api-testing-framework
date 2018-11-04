@@ -2,6 +2,7 @@
 
 Each exercise is described in a separate file. Reason for this is that each exercise builds on
 the previous one - often solving a problem with what you have built so far.  
+A good practice is to ask before each exercise: what is the next thing I should do to improve the framework?  
 
 Example solutions can be found in the `example_solutions` directory.  
 
