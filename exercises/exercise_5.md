@@ -10,7 +10,7 @@ To create log records, you'll need to import the logging module. After that you 
 log records of different log levels, e.g. `logging.info("all good")` or `logging.critical("run away!")`
 
 When a test results in an error or a fail, pytest will automatically output the created log records.
-If you want to see the log records regardless of test result, use `pytest --log-cli-level debug`.
+If you want to see the log records regardless of the test result, use `pytest --log-cli-level debug`.
 
 Docs:
 - https://docs.python.org/2/library/logging.html
@@ -19,10 +19,20 @@ Docs:
 
 ### Requests hook
 The `requests.Session` object has a `hook` attribute containing a dictionary with only
-one key: `response`.
-The value for that key is a list of functions that are run for every response.    
-By adding the name of a function to that list in the `__init__` of a subclass of `requests.session`,
- you can use that function to take care of the logging of each request and response.
+one key: `response`. The value for that key is a list of functions that are run for every response.    
+
+By adding the name of a function to that list in the `__init__` of a subclass of `requests.Session`,
+you can use that function to take care of the logging of each request and response:
+```
+class ApiClient(requests.Session):
+    def __init__(self):
+        super(ApiClient, self).__init__()  # super().__init__() in Python3
+        self.hooks['response'].append(self._log_details)
+        
+    @staticmethod
+    def _log_details(r, *args, **kwargs):
+        pass  # you decide what this should do ;-)
+```
  
 Useful attributes of the `response` object:
 - `response.status_code`

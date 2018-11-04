@@ -13,12 +13,12 @@ return body: string
 
 **GET**  
 return code: 200  
-return body: list of books
+return body: list of books (json)
 
 
 **GET /book-id**  
 return code: 200  
-return body: book  
+return body: book (json)
 
 example response:
 ```
@@ -35,7 +35,7 @@ example response:
     
 **POST**  
 return code: 201  
-return body: id of created book  
+return body: id of created book (json)
 
 example response:
 ```
@@ -52,14 +52,14 @@ return code: 200
 **PUT /book-id**
 requires token    
 return code: 200  
-return body: updated book
+return body: updated book (json)
 
 
 ## /token
 
 **POST /user**  
 return code: 200  
-return body: token
+return body: token (json)
   
 example response:
 ```

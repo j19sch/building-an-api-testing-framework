@@ -4,10 +4,12 @@
 don't repeat yourself)
 
 ### Assignment
-Create an API client module as an abstraction layer (or interface) between the API and your tests.  
+Create an API client module as an abstraction layer (or interface) between the API and your tests. You could do this
+using either functions or classes. However, because of something we want to do in exercise 5, you should use classes.
 
-You could do this using either functions or classes.
-However, because of something we want to do in exercise 5, you should use classes.
+The module should contain one class per endpoint of the API - with your tests calling the methods of that class
+to interact with the APIs.
+
 
 ### Apiclient class
 You can define a class as follows:
@@ -18,6 +20,14 @@ class MyClass(object):  # class MyClass(): in Python 3
     
     def my_method(self):
         pass  # this code is run for an instance with my_class.my_method()
+
+```
+
+And then use it in a test:
+```
+def test_with_a_class():
+    my_class = MyClass()
+    result = my_class.my_method()
 
 ```
 
