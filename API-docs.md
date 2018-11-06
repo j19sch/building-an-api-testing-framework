@@ -6,7 +6,7 @@ host: `http:localhost:8000`
 
 **GET**  
 return code: 200  
-return body: string
+return body: (string)
 
 
 ## /books
@@ -16,7 +16,7 @@ return code: 200
 return body: list of books (json)
 
 
-**GET /book-id**  
+**GET /{book-id}**  
 return code: 200  
 return body: book (json)
 
@@ -44,12 +44,12 @@ example response:
     }
 ```
 
-**DELETE /book-id**  
+**DELETE /{book-id}**  
 requires token  
 return code: 200
 
 
-**PUT /book-id**
+**PUT /{book-id}**
 requires token    
 return code: 200  
 return body: updated book (json)
@@ -57,7 +57,7 @@ return body: updated book (json)
 
 ## /token
 
-**POST /user**  
+**POST /{user}**  
 return code: 200  
 return body: token (json)
   
