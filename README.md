@@ -42,7 +42,7 @@ waitress (win: `pip install waitress`)
 
 
 
-## Exercises
+## Exercises  (`./exercises`)
 See `./exercises/exercises_readme.md` for more information about the exercises.
 
 ### Reference materials
@@ -56,7 +56,16 @@ https://docs.pytest.org/en/latest/contents.html and https://docs.pytest.org/en/l
 
 
 
-## Extras
+## Extras (`./extras`)
+
+### next steps
+- validating json with jsonschema
+- test with parametrization
+- debugging test code
+- add a file handler to the logging
+
+If you want even more options for logging, have a look at a pytest plugin I built: pytest-logfest at 
+https://pypi.org/project/pytest-logfest/.
 
 ### Same test, different tools
 Test deleting a book, implemented with:
@@ -66,12 +75,6 @@ Test deleting a book, implemented with:
 - tavern: `pytest <path>`
 
 ToDo: create book to delete in test, instead of deleting first on of retrieved books
-
-### next steps
-- validating json with jsonschema
-- debugging test code
-- (todo) test with parametrization
-- (todo) add a file handler to the logging, mention pytest-logfest (inc. disclaimer)
 
 ### More Pytest
 - Pytest Quick Start Guide - Bruno Oliveira

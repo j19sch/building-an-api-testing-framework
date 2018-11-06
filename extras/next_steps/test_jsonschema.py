@@ -1,4 +1,4 @@
-import jsonschema
+import jsonschema  # https://python-jsonschema.readthedocs.io/en/latest/
 import requests
 
 
