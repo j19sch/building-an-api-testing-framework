@@ -8,16 +8,16 @@ class ApiClient(requests.Session):
         self.hooks['response'].append(self._log_details)
 
     @staticmethod
-    def _log_details(r, *args, **kwargs):
-        logging.info("{}: {}".format(r.request.method, r.request.url))
-        logging.info("headers: {}".format(r.request.headers))
-        if r.request.body is not None:
-            logging.info("request body: {}".format(r.request.body))
+    def _log_details(response, *args, **kwargs):
+        logging.info("{}: {}".format(response.request.method, response.request.url))
+        logging.info("headers: {}".format(response.request.headers))
+        if response.request.body is not None:
+            logging.info("request body: {}".format(response.request.body))
 
-        logging.info("response status: {}, elapsed: {}s".format(r.status_code, r.elapsed.total_seconds()))
-        logging.info("headers: {}".format(r.headers))
-        if r.text != "":
-            logging.info("response body: {}".format(r.text))
+        logging.info("response status: {}, elapsed: {}s".format(response.status_code, response.elapsed.total_seconds()))
+        logging.info("headers: {}".format(response.headers))
+        if response.text != "":
+            logging.info("response body: {}".format(response.text))
 
 
 class KnockKnock(ApiClient):
