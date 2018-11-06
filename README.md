@@ -15,9 +15,10 @@ If you run into any issues with the steps below, please let me know at j19sch@gm
 - Install virtualenv (`pip install --user virtualenv`)
 
 ### Setup a virtual environment
-- Create virtualenv (`virtualenv venv`)
+- Create a virtual python environment (`python -m virtualenv venv`)
+	- Note that this will create the virtual environment in the current directory, so pick a convenient location.
 	- If you have both Python 2.7 and Python 3 installed, and you want to use Python 3:
-	`virtualenv -p python3 venv`
+	`python -m virtualenv -p python3 venv`
 - Activate virtualenv (linux, mac: `source venv/bin/activate`) or (win: `venv\bin\activate.bat`)
 
 ### Download and install this repo
