@@ -19,7 +19,7 @@ If you run into any issues with the steps below, please let me know at j19sch@gm
 	- Note that this will create the virtual environment in the current directory, so pick a convenient location.
 	- If you have both Python 2.7 and Python 3 installed, and you want to use Python 3:
 	`python -m virtualenv -p python3 venv`
-- Activate virtualenv (linux, mac: `source venv/bin/activate`) or (win: `venv\bin\activate.bat`)
+- Activate virtualenv (linux, mac: `source venv/bin/activate`) or (win: `venv\Scripts\activate.bat`)
 - Once you're done with the virtual environment (i.e. no longer want to play around with the code and the exercises), type `deactivate`
 to deactivate it.
 
