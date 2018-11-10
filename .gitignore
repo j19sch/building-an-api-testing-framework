@@ -12,6 +12,9 @@ venv/
 # pytest
 .pytest_cache/
 
+# test log files
+*.log
+
 # robot framework
 log.html
 output.xml
