@@ -39,8 +39,8 @@ waitress (win: `pip install waitress`)
 - Any advanced text editor with the following features will do:
     - syntax highlighting (easier to read)
     - word completion (avoids typos in names of variables, functions and methods)
-- If you're note sure which one to use, Visual Studio Code is a good choice
-(https://code.visualstudio.com/)
+- If you're note sure which one to use, Visual Studio Code is a good choice: https://code.visualstudio.com/
+You can find VS Code's Python plugin here: https://marketplace.visualstudio.com/items?itemName=ms-python.python 
 - Using an IDE like PyCharm is fine too.
 
 
