@@ -46,7 +46,7 @@ You can find VS Code's Python plugin here: https://marketplace.visualstudio.com/
 
 
 ## Exercises  (`./exercises`)
-See `./exercises/exercises_readme.md` for more information about the exercises.
+See `./exercises/README.md` for more information about the exercises.
 
 ### Reference materials
 - API documentation for the app: `API-docs.md`
@@ -61,32 +61,15 @@ https://docs.pytest.org/en/latest/contents.html and https://docs.pytest.org/en/l
 
 ## Extras (`./extras`)
 
-### next steps
-- validating json with jsonschema
-- test with parametrization
-- debugging test code
-- add a file handler to the logging
+This directory contains:
+- next steps to extend the framework
+- the same test implemented using different tools, e.g. behave and tavern
+- a README.md with further details
 
-If you want even more options for logging, have a look at a pytest plugin I built: pytest-logfest at 
-https://pypi.org/project/pytest-logfest/.
 
-ToDo:
-- Basic Auth instead of user/token in header (PATCH?)
-- Reading data from files
-- Pytest custom command-line options
-- xml response
-- SOAP API
-
-### Same test, different tools
-Test deleting a book, implemented with:
-- behave: `behave <path>`
-- pytest and requests: `pytest <path>`
-- robot framework with robotframework-requests: `robot <path>`
-- tavern: `pytest <path>`
-
-ToDo: create book to delete in test, instead of deleting first on of retrieved books
 
 ### More Pytest
+- Pytest reference https://docs.pytest.org/en/latest/reference.html
 - Pytest Quick Start Guide - Bruno Oliveira
 https://www.packtpub.com/web-development/pytest-quick-start-guide
 - Python Testing with pytest: Simple, Rapid, Effective, and Scalable - Brian Okken
