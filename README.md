@@ -71,7 +71,9 @@ If you want even more options for logging, have a look at a pytest plugin I buil
 https://pypi.org/project/pytest-logfest/.
 
 ToDo:
-- Basic Auth instead of user/token in header
+- Basic Auth instead of user/token in header (PATCH?)
+- Reading data from files
+- Pytest custom command-line options
 - xml response
 - SOAP API
 
