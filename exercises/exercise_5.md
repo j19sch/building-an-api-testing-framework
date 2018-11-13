@@ -18,7 +18,7 @@ Docs:
 - https://docs.pytest.org/en/latest/logging.html
 
 ### Requests hook
-The `requests.Session` object has a `hook` attribute containing a dictionary with only
+The `requests.Session` class has a `hook` attribute containing a dictionary with only
 one key: `response`. The value for that key is a list of functions that are run for every response.    
 
 By adding the name of a function to that list in the `__init__` of a subclass of `requests.Session`,
@@ -30,7 +30,7 @@ class ApiClient(requests.Session):
         self.hooks['response'].append(self._log_details)
         
     @staticmethod
-    def _log_details(r, *args, **kwargs):
+    def _log_details(response, *args, **kwargs):
         pass  # you decide what this should do ;-)
 ```
  
