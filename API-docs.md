@@ -1,10 +1,12 @@
 # API specs
 
-host: `http:localhost:8000`
+host: `http://localhost:8000`
 
 ## /knockknock
 
 **GET**  
+request body: none  
+
 return code: 200  
 return body: (string)
 
@@ -12,11 +14,15 @@ return body: (string)
 ## /books
 
 **GET**  
+request body: none  
+
 return code: 200  
 return body: list of books (json)
 
 
 **GET /{book-id}**  
+request body: none  
+
 return code: 200  
 return body: book (json)
 
@@ -34,6 +40,8 @@ example response:
 ```
     
 **POST**  
+request body: book details (no id) (json)  
+
 return code: 201  
 return body: id of created book (json)
 
@@ -45,12 +53,16 @@ example response:
 ```
 
 **DELETE /{book-id}**  
+request body: none  
+
 requires token  
 return code: 200
 
 
-**PUT /{book-id}**
+**PUT /{book-id}**  
 requires token    
+request body: book details (no id) (json)  
+
 return code: 200  
 return body: updated book (json)
 
@@ -58,6 +70,8 @@ return body: updated book (json)
 ## /token
 
 **POST /{user}**  
+request body: none  
+
 return code: 200  
 return body: token (json)
   
