@@ -1,27 +1,25 @@
 # API specs
+host: `http://localhost:8000` (Note: `https` is not supported.)
 
-host: `http://localhost:8000`
 
 ## /knockknock
-
-**GET**  
-request body: none  
+**GET /knockknock**  
+request body: none
 
 return code: 200  
 return body: (string)
 
 
 ## /books
-
-**GET**  
-request body: none  
+**GET /books**  
+request body: none
 
 return code: 200  
 return body: list of books (json)
 
 
-**GET /{book-id}**  
-request body: none  
+**GET /books/{book-id}**  
+request body: none
 
 return code: 200  
 return body: book (json)
@@ -38,9 +36,10 @@ example response:
         "year": 2008
     }
 ```
+
     
-**POST**  
-request body: book details (no id) (json)  
+**POST /books**  
+request body: book details (no id) (json)
 
 return code: 201  
 return body: id of created book (json)
@@ -52,14 +51,15 @@ example response:
     }
 ```
 
-**DELETE /{book-id}**  
-request body: none  
+
+**DELETE /books/{book-id}**  
+request body: none
 
 requires token  
 return code: 200
 
 
-**PUT /{book-id}**  
+**PUT /books/{book-id}**
 requires token    
 request body: book details (no id) (json)  
 
@@ -68,11 +68,10 @@ return body: updated book (json)
 
 
 ## /token
-
-**POST /{user}**  
+**POST /token/{user}**  
 request body: none  
 
-return code: 200  
+return code: 201  
 return body: token (json)
   
 example response:
@@ -80,4 +79,12 @@ example response:
     {
         "token": "AQuKIjKwcktlzEK"
     }
+```
+
+
+**using tokens**  
+Calls requiring a token, expect the user and token to be in the header as key-value pairs:
+```
+user: joep
+token: owAMNRTDSdjLYtw
 ```

@@ -23,7 +23,9 @@ one key: `response`. The value for that key is a list of functions that are run 
 
 By adding the name of a function to that list in the `__init__` of a subclass of `requests.Session`,
 you can use that function to take care of the logging of each request and response:
-```
+```python
+import requests 
+
 class ApiClient(requests.Session):
     def __init__(self):
         super(ApiClient, self).__init__()  # super().__init__() in Python3

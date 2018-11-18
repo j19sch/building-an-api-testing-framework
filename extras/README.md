@@ -18,6 +18,7 @@ ToDo:
 - Pytest custom command-line options
 - xml response
 - SOAP API
+- Pytest yield fixture for teardown (continuation of exercise 3)
 
 
 

@@ -13,13 +13,19 @@ to interact with the APIs.
 
 ### Apiclient class
 You can define a class as follows:
-```
+```python
+import requests
+
 class MyClass(object):  # class MyClass(): in Python 3
     def __init__(self):
-        pass  # this code is run when instantiating the class my_class = MyClass()
+        # this code is run when instantiating the class my_class = MyClass()
+        # one thing you can do here, is store the endpoint of the url:
+        self.url = "http://localhost:8000/knockknock"
     
     def my_method(self):
-        pass  # this code is run for an instance with my_class.my_method()
+        # this code is run for an instance with my_class.my_method()
+        # so if we want to the GET of our smoketest:
+        return requests.get(self.url)
 
 ```
 
@@ -27,7 +33,7 @@ And then use it in a test:
 ```
 def test_with_a_class():
     my_class = MyClass()
-    result = my_class.my_method()
+    response = my_class.my_method()
 
 ```
 

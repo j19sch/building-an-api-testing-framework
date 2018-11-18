@@ -11,10 +11,14 @@ If you run into any issues with the steps below, please let me know at j19sch@gm
 ### Python and VirtualEnv
 - Install Python
     - Python 2.7 is fine. If you need to install Python, take Python 3 (it's the future).
-    - Instructions: https://ehmatthes.github.io/pcc/chapter_01/README.html (no need to install Geany)
-- Install virtualenv (`pip install --user virtualenv`)
+    - Instructions: https://ehmatthes.github.io/pcc/chapter_01/README.html (no need to install Geany or Sublime Text)
+- Install virtualenv (`pip install --user virtualenv`). Virrtualenv allows you to create an isolated Python environment,
+with full control over which Python version to use and which Python packages to install.
 
 ### Setup a virtual environment
+We will be using this virtual environment both for running the test app, and for running the code your
+write during the exercises.
+ 
 - Create a virtual python environment (`python -m virtualenv venv`)
 	- Note that this will create the virtual environment in the current directory, so pick a convenient location.
 	- If you have both Python 2.7 and Python 3 installed, and you want to use Python 3:
@@ -24,7 +28,7 @@ If you run into any issues with the steps below, please let me know at j19sch@gm
 to deactivate it.
 
 ### Download and install this repo
-- download this repository by clicking the green `Clone or download` button at the top (make sure you update to
+- Download this repository by clicking the green `Clone or download` button at the top (make sure you update to
 the latest version right before the workshop) 
 - Install requirements.txt (`pip install -r requirements.txt`)
 - Install gunicorn (linux, mac: `pip install gunicorn`) or
@@ -40,8 +44,10 @@ waitress (win: `pip install waitress`)
     - syntax highlighting (easier to read)
     - word completion (avoids typos in names of variables, functions and methods)
 - If you're note sure which one to use, Visual Studio Code is a good choice: https://code.visualstudio.com/
-You can find VS Code's Python plugin here: https://marketplace.visualstudio.com/items?itemName=ms-python.python 
+    - You can find VS Code's Python plugin here: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+    - To tell VS Code to use the interpreter in your virtual environment: https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment 
 - Using an IDE like PyCharm is fine too.
+    - To tell PyCharm to use the interpreter in your virtual environment: https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html
 
 
 
