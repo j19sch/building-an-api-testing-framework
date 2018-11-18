@@ -1,4 +1,4 @@
-# The "Books" API app - build an API testing framework in Python
+# The "Books" API app - building an API testing framework in Python
 
 **Disclaimer**: 
 This app is intended as a practice app for a testing workshop, so I took some shortcuts. ;-)

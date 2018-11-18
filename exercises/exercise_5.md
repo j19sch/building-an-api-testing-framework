@@ -17,6 +17,7 @@ Docs:
 - https://docs.python.org/3/library/logging.html
 - https://docs.pytest.org/en/latest/logging.html
 
+
 ### Requests hook
 The `requests.Session` class has a `hook` attribute containing a dictionary with only
 one key: `response`. The value for that key is a list of functions that are run for every response.    
@@ -35,8 +36,19 @@ class ApiClient(requests.Session):
     def _log_details(response, *args, **kwargs):
         pass  # you decide what this should do ;-)
 ```
- 
-Useful attributes of the `response` object:
+
+So you end up with two levels of inheritance:
+```
+requests.Session, the Session class defined by the requests library
+  |- general ApiClient class, takes care of the logging
+    |- specific API client classes, one for reach API endpoint (`/books`, `/token`, etc,)
+```
+
+Docs: http://docs.python-requests.org/en/master/user/advanced/#event-hooks
+
+
+### Requests library - response object
+The `repsonse` object has several interesting attributes for logging purposes:
 - `response.status_code`
 - `response.headers`
 - `response.text`
@@ -46,4 +58,4 @@ Useful attributes of the `response` object:
 - `response.request.headers`
 - `response.request.body`
 
-Docs: http://docs.python-requests.org/en/master/user/advanced/#event-hooks
+Docs: http://docs.python-requests.org/en/master/api/#requests.Response
