@@ -48,7 +48,7 @@ Docs: http://docs.python-requests.org/en/master/user/advanced/#event-hooks
 
 
 ### Requests library - response object
-The `repsonse` object has several interesting attributes for logging purposes:
+The `response` object has several interesting attributes for logging purposes:
 - `response.status_code`
 - `response.headers`
 - `response.text`

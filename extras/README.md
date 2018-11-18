@@ -19,6 +19,7 @@ ToDo:
 - xml response
 - SOAP API
 - Pytest yield fixture for teardown (continuation of exercise 3)
+- Filtering and/or searching with params
 
 
 

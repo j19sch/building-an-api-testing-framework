@@ -28,6 +28,8 @@ write during the exercises.
 to deactivate it.
 
 ### Download and install this repo
+Important: perform the steps below with your virtual environment activated.
+
 - Download this repository by clicking the green `Clone or download` button at the top (make sure you update to
 the latest version right before the workshop) 
 - Install requirements.txt (`pip install -r requirements.txt`)
@@ -35,17 +37,20 @@ the latest version right before the workshop)
 waitress (win: `pip install waitress`)
 
 ### Running the app
+Important: perform the steps below with your virtual environment activated.
+
 - linux, mac: `gunicorn api_app.src.app` or win: `waitress-serve --port=8000 api_app.src.app:api`
 - smoke test by using your browser to go to `localhost:8000/knockknock`
 - the easiest way to restart the app is to kill the process (`ctrl/cmd+c`) and start it again
 
-### Advaced text editor
+### Advanced text editor
 - Any advanced text editor with the following features will do:
     - syntax highlighting (easier to read)
     - word completion (avoids typos in names of variables, functions and methods)
 - If you're note sure which one to use, Visual Studio Code is a good choice: https://code.visualstudio.com/
     - You can find VS Code's Python plugin here: https://marketplace.visualstudio.com/items?itemName=ms-python.python
-    - To tell VS Code to use the interpreter in your virtual environment: https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment 
+    - To tell VS Code to use the interpreter in your virtual environment: https://code.visualstudio.com/docs/python/environments#_select-and-activate-an-environment
+    - To enable autosave: https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save 
 - Using an IDE like PyCharm is fine too.
     - To tell PyCharm to use the interpreter in your virtual environment: https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html
 
