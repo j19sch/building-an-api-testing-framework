@@ -1,9 +1,13 @@
-## Exercise 5 - logging
+## Exercise 5 - logging v1
 **Goal**: add logging to record requests and responses  
 **Purpose**: be able to see which requests and responses are being sent
 
 ### Assignment
-Add logging to your tests by using the requests hook.
+Add logging to your API clients to capture information about requests and responses.
+
+For this assignment it is sufficient to add logging to the `POST` on `/books` in the setup of your test.
+In the next exercise, we will look at a more generic and more maintainable way to log requests and responses.
+
 
 ### Logging
 To create log records, you'll need to import the logging module. After that you can easily create
@@ -18,37 +22,9 @@ Docs:
 - https://docs.pytest.org/en/latest/logging.html
 
 
-### Requests hook
-The `requests.Session` class has a `hook` attribute containing a dictionary with only
-one key: `response`. The value for that key is a list of functions that are run for every response.    
-
-By adding the name of a function to that list in the `__init__` of a subclass of `requests.Session`,
-you can use that function to take care of the logging of each request and response:
-```python
-import requests 
-
-class ApiClient(requests.Session):
-    def __init__(self):
-        super(ApiClient, self).__init__()  # super().__init__() in Python3
-        self.hooks['response'].append(self._log_details)
-        
-    @staticmethod
-    def _log_details(response, *args, **kwargs):
-        pass  # you decide what this should do ;-)
-```
-
-So you end up with two levels of inheritance:
-```
-requests.Session, the Session class defined by the requests library
-  |- general ApiClient class, takes care of the logging
-    |- specific API client classes, one for reach API endpoint (`/books`, `/token`, etc,)
-```
-
-Docs: http://docs.python-requests.org/en/master/user/advanced/#event-hooks
-
-
 ### Requests library - response object
-The `response` object has several interesting attributes for logging purposes:
+All the HTTP methods of the requests library (`requests.get()`, `requests.post()`, etc.) return a response object.
+This object contains all the information we need for logging purposes:
 - `response.status_code`
 - `response.headers`
 - `response.text`
