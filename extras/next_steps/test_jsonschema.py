@@ -1,5 +1,10 @@
-import jsonschema  # https://python-jsonschema.readthedocs.io/en/latest/
+import jsonschema
 import requests
+
+
+# The three dictionaries below define json schema's, which are used in the tests to check the format of the responses.
+#
+# Docs: https://python-jsonschema.readthedocs.io/en/latest/
 
 
 book_definition = {

@@ -1,5 +1,14 @@
-import pytest  # https://docs.pytest.org/en/latest/parametrize.html
+import pytest  #
 import requests
+
+
+# The @pytest.mark.parametrize decorator allows you to run the same test with different data.
+# The example below illustrates the simples usage: different inputs expected to result in the same output.
+# Since the decorator accepts multiple arguments, you can also for instance provide pairs of expected input
+# and expected output. This allows you to test these inputs and outputs without having to duplicate code.
+# Finally, by stacking parametrize decorators you can test all combinations of the arguments in the separate decorators.
+#
+# Docs: https://docs.pytest.org/en/latest/parametrize.html
 
 
 @pytest.mark.parametrize("invalid_book_id", [

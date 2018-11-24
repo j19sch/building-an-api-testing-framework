@@ -6,7 +6,8 @@ The `next_steps` directory contains several options for extending your test fram
 - `debugging.md`: explains how to use the Python debugger with pytest
 - `test_jsonschema.py`: validation json with the jsonschema libary
 - `test_log_to_file.py`: write your test logs to a file
-- `test_parametrization.py`: use pytest's parametrization to run the same test with different inputs
+- `test_parametrization.py`: uses pytest's parametrization to run the same test with different inputs
+- `test_teardown_fixture.py`: uses the `yield` statement in a fixture to execute teardown
 
 If you want even more options for logging, have a look at a pytest plugin I built: pytest-logfest at 
 https://pypi.org/project/pytest-logfest/.
@@ -16,10 +17,10 @@ ToDo:
 - Basic Auth instead of user/token in header (PATCH?)
 - Reading data from files
 - Pytest custom command-line options
-- xml response
-- SOAP API
+- xml response / SOAP API
 - Pytest yield fixture for teardown (continuation of exercise 3)
 - Filtering and/or searching with params
+- Linting with flake8
 
 
 

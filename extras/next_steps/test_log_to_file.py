@@ -1,7 +1,16 @@
 import datetime
-import logging  # https://docs.python.org/2.7/library/logging.html and https://docs.python.org/3.7/library/logging.html
+import logging
 import pytest
 import requests
+
+
+# The logging setup below differs in two areas from the one from exercise 6:
+# - logging.getLogger(<name>) is used to set the name of the log node. This makes it easier to see by which
+#     API the log records are being generated.
+# - A handler of the type FileHandler is added to the logger. There are different kinds of handlers in Python;
+#     a FileHandler will write log records to a file.
+#
+# Docs: https://docs.python.org/2.7/library/logging.html and https://docs.python.org/3.7/library/logging.html
 
 
 class ApiClient(requests.Session):
@@ -9,7 +18,7 @@ class ApiClient(requests.Session):
         super(ApiClient, self).__init__()
         self.hooks['response'].append(self._log_details)
 
-        self.logger = logging.getLogger(api_name)
+        self.logger = logging.getLogger(api_name)  # sets the name of the log node to api_name
         self.logger.setLevel("INFO")
 
         if not self.logger.handlers:  # prevents multiple handlers resulting in duplicate log lines
