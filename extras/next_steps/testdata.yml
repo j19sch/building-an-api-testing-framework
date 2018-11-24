@@ -1,0 +1,8 @@
+books:
+  book_1:
+    author: Nicole Forsgren, Jez Humble, Gene Kim
+    pages: 257
+    publisher: IT Revolution
+    sub_title: Building and scaling high performing technology organizations
+    title: Accelerate
+    year: 2018

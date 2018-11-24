@@ -1,13 +1,18 @@
+# needed for exercises
 falcon
 pytest
 requests
 
-# also needed:
+# also needed for exercises:
 # gunciorn (linux, mac)
 # waitress (windows)
 
+# additionally needed for extras/next_steps:
 jsonschema
+pyyaml
 
+
+# additionally needed for extras/same_test_different_tools:
 behave
 robotframework-requests
 tavern
