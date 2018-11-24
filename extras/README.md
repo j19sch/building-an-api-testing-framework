@@ -18,7 +18,6 @@ ToDo:
 - Reading data from files
 - Pytest custom command-line options
 - xml response / SOAP API
-- Pytest yield fixture for teardown (continuation of exercise 3)
 - Filtering and/or searching with params
 - Linting with flake8
 
@@ -34,4 +33,4 @@ using different tools:
 
 
 ToDo:
-- create book to delete in test, instead of deleting first on of retrieved books
+- create book to delete in test, instead of deleting first one of retrieved books
