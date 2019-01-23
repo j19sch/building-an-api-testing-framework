@@ -57,6 +57,7 @@ Important: perform the steps below with your virtual environment activated.
     - To enable autosave: https://code.visualstudio.com/docs/editor/codebasics#_save-auto-save 
 - Using an IDE like PyCharm is fine too.
     - To tell PyCharm to use the interpreter in your virtual environment: https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html
+    - To tell PyCharm to use pytest to run tests: https://www.jetbrains.com/help/pycharm/pytest.html#enable-pytest
 
 
 
