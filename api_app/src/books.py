@@ -44,7 +44,7 @@ class Book(object):
     def on_delete(self, req, resp, book_id):
         if [book for book in self.books if book['id'] == book_id]:
             self.books[:] = [book for book in self.books if book["id"] != book_id]
-            resp.status = falcon.HTTP_200
+            resp.status = falcon.HTTP_204
         else:
             resp.status = falcon.HTTP_NOT_FOUND
 
