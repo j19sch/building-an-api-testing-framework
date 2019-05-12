@@ -14,7 +14,6 @@ def test_get_single_book(books_api, initial_books):
     expected = initial_books[0].copy()
 
     response = books_api.get_one_book(expected['id'])
-
     assert response.status_code == 200
     assert response.json() == expected
 
