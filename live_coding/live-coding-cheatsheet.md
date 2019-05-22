@@ -44,29 +44,31 @@ book_to_delete = {
 - pytest docs
 
 
-## key points
-### phase 1 - calling an API
+## waypoints
+### step 1 - calling an API
 - use library that's transparent
 
-### phase 2 - pytest
+### step 2 - pytest
 - use library that makes testing easier
 
-### phase 3 - fixtures
+### step 3 - fixtures
 - separate setup/teardown from tests
 
-### phase 4 - API clients
+### step 4 - API clients
 - seperate interface code from tests
 
-### phase 5 - logging
+### step 5 - logging
 - more transparency
 
-### wrap-up
+### heuristic
 - CRUDDER - steps - test & code
 	- CRUD -> tests & code
 	- Debug -> code
 	- Explore -> test
 	- Run & report -> code & test
-- How is your framework helping you to do better testing? (all of it!)
+
+### conclusion
+How is your framework helping you to do better testing? (all of it!)
 
 
 ## timing
