@@ -1,10 +1,10 @@
 # TestBash NL 2019
 
 ## About me
-Joep Schuurkes
-Tech Lead Testing @ Mendix
+Joep Schuurkes  
+Tech Lead Testing @ Mendix  
 
-@j19sch
+@j19sch  
 github.com/j19sch
 
 
