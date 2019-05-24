@@ -34,10 +34,10 @@ https://github.com/j19sch/building-an-api-testing-framework/tree/live-coding
 
 
 ## A heuristic - CRUDDER
-CRUD - test & code
-D - debug
-E - explore
-R - run & report
+CRUD - test & code  
+D - debug  
+E - explore  
+R - run & report  
 
 
 ## Conclusion

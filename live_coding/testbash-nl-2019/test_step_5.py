@@ -1,3 +1,6 @@
+# step 5 - logging
+# run with pytest --log-cli-level info to see logging
+
 import requests
 import pytest
 import logging

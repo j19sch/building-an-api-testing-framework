@@ -1,4 +1,4 @@
-# step 2
+# step 2 - pytest
 
 import requests
 from pprint import pprint

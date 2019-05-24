@@ -1,3 +1,5 @@
+# step 3 - fixtures
+
 import requests
 import pytest
 

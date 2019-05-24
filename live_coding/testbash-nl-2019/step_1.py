@@ -1,4 +1,4 @@
-# step 1
+# step 1 - requests library
 
 import requests
 from pprint import pprint
