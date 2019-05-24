@@ -17,11 +17,11 @@ class BooksApi(requests.Session):
 	@staticmethod  # Why it went wrong at TestBash
 	def _log_stuff(response, *args, **kwargs):
 		logging.info("oops sorry")
-		# logging.info(response.request.url)
-		# logging.info(response.request.method)
-		# logging.info(response.request.body)
-		# logging.info(response.status_code)
-		# logging.info(response.text)
+		logging.info(response.request.url)
+		logging.info(response.request.method)
+		logging.info(response.request.body)
+		logging.info(response.status_code)
+		logging.info(response.text)
 
 @pytest.fixture
 def books_api():
