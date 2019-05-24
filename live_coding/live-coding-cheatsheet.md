@@ -20,9 +20,13 @@ book_to_delete = {
 }
 ```
 
-`self.hooks['response'].append(self._log_stuff)`
+```
+self.hooks['response'].append(self._log_stuff)
+```
 
-`def _log_stuff(response, *args, **kwargs):`
+```
+def _log_stuff(response, *args, **kwargs):
+```
 
 
 ## setup
@@ -36,6 +40,8 @@ book_to_delete = {
 - api app running
 - separate folder for tests
 - change prompt: `export PS1="\u:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)")\$ "`
+- xrandr --output HDMI2 --mode 1024x768 --scale 1.3x1.3 --output HDMI2 --mode 1024x768 --same-as eDP1
+- gunicorn api_app.src.app
 
 ### open
 - cheatsheet
