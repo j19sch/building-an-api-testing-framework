@@ -15,7 +15,8 @@ after which the test will:
 ### Fixtures
 Pytest allows you to define fixtures for test setup and teardown using the
 `@pytest.fixture` decorator. In this exercise we will only look at using fixtures
-to set up data. (If you're curious about teardown, see `test_teardown_fixture.py` in `./extras/next_steps`.)
+to set up data. To see an example of a teardown fixture, see
+`test_teardown_fixture.py` in `./extras/next_steps`.
 
 To create a fixture, write a function and add the `@pytest.fixture` decorator to that function.
 Any test function can then use the return value(s) of your fixture, by using the function's name
@@ -30,6 +31,14 @@ def my_favourite_number():
 def test_my_favourite_number_is_73(my_favourite_number):
     assert my_favourite_number == 73
 ```
+
+Fixtures can apply to different levels of your tests:
+- `function` is limited to a particular test
+- `module` is limited to a particular file
+- `class` is limited to a particular class
+- `session` is executed once for all the tests you're running
+Here's how you'd modify your fixture decorator to limit the fixture to one test:
+@pytest.fixture(scope="function")
 
 Note that not only tests can use fixtures, fixtures can also use other fixtures.
 
