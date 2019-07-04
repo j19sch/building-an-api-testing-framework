@@ -33,12 +33,11 @@ def test_my_favourite_number_is_73(my_favourite_number):
 ```
 
 Fixtures can apply to different levels of your tests:
-- `function` is limited to a particular test
+- `function` is limited to a particular test (default)
 - `module` is limited to a particular file
-- `class` is limited to a particular class
 - `session` is executed once for all the tests you're running
 Here's how you'd modify your fixture decorator to limit the fixture to one test:
-@pytest.fixture(scope="function")
+`@pytest.fixture(scope="function")`.
 
 Note that not only tests can use fixtures, fixtures can also use other fixtures.
 
