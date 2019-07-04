@@ -19,9 +19,16 @@ Pytest will collect tests based on the following criteria:
 To run the tests, execute `pytest` in the directory containing your tests,
 or specify the path: `pytest <path_to_dir>`.
 
-You can use `assert a == b` to check actual values against expected values.
-In general it's not needed to add an assert message, since Pytest does a great job
-reporting on failed tests. If you do want an assert message: `assert a == b, "a did not equal b"`
-or `assert a == b, "value of a: {} does not equal value of b: {}".format(a, b)`
-
 Docs: https://docs.pytest.org/en/latest/getting-started.html#create-your-first-test
+
+### Asserts
+You can use `assert <actual value> == <expected value>` to check actual values against expected values.
+In general it's not needed to add an assert message, since Pytest does a great job
+reporting on failed tests. If you do want an assert message: `assert actual == expected, "actual did not equal expected"`
+or `assert actual == expected, "value of actual: {} does not equal value of expected: {}".format(actual, expected)`
+
+### Pytest output
+Pytest is rather verbose in its output when tests fail. You can see examples of failure reports
+here: https://docs.pytest.org/en/latest/example/reportingdemo.html
+
+To print a list of all non-passed tests at the end of the output, run pytest with the `-ra` option.

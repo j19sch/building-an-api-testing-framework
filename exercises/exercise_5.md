@@ -35,3 +35,10 @@ This object contains all the information we need for logging purposes:
 - `response.request.body`
 
 Docs: http://docs.python-requests.org/en/master/api/#requests.Response
+
+### Reports
+Pytest does not have a built-in formatted report beyond what you've seen
+in the console. The `pytest-html` library allows you to generate an HTML
+report.
+
+Docs: https://pypi.org/project/pytest-html/

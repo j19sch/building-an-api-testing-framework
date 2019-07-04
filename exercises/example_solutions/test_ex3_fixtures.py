@@ -2,7 +2,7 @@ import pytest
 import requests
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def creds():
     user = 'bob'
     response = requests.post('http://localhost:8000/token/' + user)
