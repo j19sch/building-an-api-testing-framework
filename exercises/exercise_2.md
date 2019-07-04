@@ -31,3 +31,8 @@ Pytest defaults to hard asserts, so a failing assert will fail the whole
 test without running the rest of it. See here for how to set up soft asserts:
 http://element34.ca/blog/soft-asserts-and-py-test.
 
+### Pytest output
+Pytest is rather verbose in its output when tests fail. You can see examples of failure reports
+here: https://docs.pytest.org/en/latest/example/reportingdemo.html
+
+To print a list of all non-passed tests at the end of the output, run pytest with the `-ra` option.
