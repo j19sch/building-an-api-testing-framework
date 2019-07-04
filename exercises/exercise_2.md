@@ -22,14 +22,10 @@ or specify the path: `pytest <path_to_dir>`.
 Docs: https://docs.pytest.org/en/latest/getting-started.html#create-your-first-test
 
 ### Asserts
-You can use `assert a == b` to check actual values against expected values.
+You can use `assert <actual value> == <expected value>` to check actual values against expected values.
 In general it's not needed to add an assert message, since Pytest does a great job
-reporting on failed tests. If you do want an assert message: `assert a == b, "a did not equal b"`
-or `assert a == b, "value of a: {} does not equal value of b: {}".format(a, b)`
-
-Pytest defaults to hard asserts, so a failing assert will fail the whole
-test without running the rest of it. See here for how to set up soft asserts:
-http://element34.ca/blog/soft-asserts-and-py-test.
+reporting on failed tests. If you do want an assert message: `assert actual == expected, "actual did not equal expected"`
+or `assert actual == expected, "value of actual: {} does not equal value of expected: {}".format(actual, expected)`
 
 ### Pytest output
 Pytest is rather verbose in its output when tests fail. You can see examples of failure reports
