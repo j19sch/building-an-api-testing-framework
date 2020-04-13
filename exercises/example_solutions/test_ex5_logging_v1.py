@@ -12,7 +12,7 @@ def books_api():
 def creds():
     user = 'bob'
     token_api = apiclients_ex5.Token()
-    response = token_api.get_token(user)
+    response = token_api.create_token(user)
     token = response.json()['token']
     return user, token
 

@@ -52,5 +52,5 @@ class Token(ApiClient):
         super(Token, self).__init__()
         self.url = self.endpoint = 'http://localhost:8000/token'
 
-    def get_token(self, username):
+    def create_token(self, username):
         return self.post(self.url + '/' + username)

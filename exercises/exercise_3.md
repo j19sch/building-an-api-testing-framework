@@ -5,7 +5,7 @@ don't repeat yourself)
 
 ### Assignment
 Create a test where you use fixtures to:
-- get a token
+- create a token
 - create a book
 
 after which the test will:

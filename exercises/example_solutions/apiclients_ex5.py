@@ -40,5 +40,5 @@ class Token(object):
     def __init__(self):
         self.url = self.endpoint = 'http://localhost:8000/token'
 
-    def get_token(self, username):
+    def create_token(self, username):
         return requests.post(self.url + '/' + username)
