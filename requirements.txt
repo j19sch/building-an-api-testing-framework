@@ -10,6 +10,7 @@ requests
 # additionally needed for extras/next_steps:
 jsonschema
 pyyaml
+schema
 
 
 # additionally needed for extras/same_test_different_tools:
