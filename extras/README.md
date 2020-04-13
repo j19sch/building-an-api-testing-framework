@@ -16,10 +16,10 @@ https://pypi.org/project/pytest-logfest/.
 ## Same test, different tools
 The `same_test_different_tools` directory contains the same test (deleting a book) implemented
 using different tools:
-- behave: run with `behave <path>`
-- pytest and requests: run with `pytest <path>`
-- robot framework with robotframework-requests:  run with `robot <path>`
-- tavern:  run with  `pytest <path>`
+- behave: run with `behave <path>`, i.e. `behave extras/same_test_different_tools/behave/features/`
+- pytest and requests: run with `pytest <path>`, i.e. `pytest extras/same_test_different_tools/pytest/`
+- robot framework with robotframework-requests:  run with `robot <path>`, i.e. `robot extras/same_test_different_tools/robot-framework/`
+- tavern:  run with  `pytest <path>`, i.e. `pytest extras/same_test_different_tools/tavern`
 
 
 ToDo:
