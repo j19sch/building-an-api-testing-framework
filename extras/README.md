@@ -10,8 +10,8 @@ The `next_steps` directory contains several options for extending your test fram
 - `test_setup_teardown_fixture.py`: uses a fixture to set up date, `yield`s it to the test, removes it in teardown
 - `test_teardown_only.py`: uses a fixture to remove a piece of data created in the test
 
-If you want even more options for logging, have a look at a pytest plugin I built: pytest-logfest at 
-https://pypi.org/project/pytest-logfest/.
+If you want even more options for logging, have a look at a pytest plugin I built: pytest-instrument at
+https://pypi.org/project/pytest-instrument/.
 
 
 ## Same test, different tools
