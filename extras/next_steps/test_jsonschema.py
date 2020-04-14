@@ -3,8 +3,9 @@ import requests
 
 
 # The three dictionaries below define json schema's, which are used in the tests to check the format of the responses.
+# Json schema docs: https://python-jsonschema.readthedocs.io/en/latest/
 #
-# Docs: https://python-jsonschema.readthedocs.io/en/latest/
+# # For validating responses with the Schema library, see test_schema_validation.
 
 
 book_definition = {
