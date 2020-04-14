@@ -40,8 +40,8 @@ Fixtures can apply to different levels of your tests:
 - `function` is limited to a particular test (default)
 - `module` is limited to a particular file
 - `session` is executed once for all the tests you're running
-Here's how you'd modify your fixture decorator to limit the fixture to one test:
-`@pytest.fixture(scope="function")`.
+Here's how you'd modify your fixture decorator to run once per file with tests:
+`@pytest.fixture(scope="module")`.
 
 Note that not only tests can use fixtures, fixtures can also use other fixtures.
 
