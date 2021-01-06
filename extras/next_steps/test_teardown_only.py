@@ -9,9 +9,9 @@ def books_to_delete():
 
     for book in books_to_delete:
         user = 'bob'
-        response = requests.post('http://localhost:8000/token/' + user)
+        response = requests.post(f'http://localhost:8000/token/{user}')
         token = response.json()['token']
-        response = requests.delete('http://localhost:8000/books/' + book,
+        response = requests.delete(f'http://localhost:8000/books/{book}',
                                    headers={'user': user, 'token': token})
         assert response.status_code == 200
 

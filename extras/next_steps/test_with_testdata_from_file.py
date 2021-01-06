@@ -16,7 +16,7 @@ import yaml  # package name when installing is pyyaml
 @pytest.fixture
 def test_data():
     with open('./extras/next_steps/testdata.yml') as testdata:
-        return yaml.load(testdata)
+        return yaml.full_load(testdata)
 
 
 def test_something(test_data):

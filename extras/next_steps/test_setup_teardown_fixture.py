@@ -10,7 +10,7 @@ import requests
 
 
 @pytest.fixture
-def new_book(creds):
+def new_book():
     new_book = {
         "author": "Neil Gaiman",
         "pages": 299,
@@ -28,14 +28,14 @@ def new_book(creds):
     yield new_book
 
     user = 'bob'
-    response = requests.post('http://localhost:8000/token/' + user)
+    response = requests.post(f'http://localhost:8000/token/{user}')
     token = response.json()['token']
-    response = requests.delete('http://localhost:8000/books/' + response.json()['id'],
+    response = requests.delete(f'http://localhost:8000/books/{new_book["id"]}',
                                headers={'user': user, 'token': token})
     assert response.status_code == 200
 
 
 def test_get_one_book(new_book):
-    response = requests.get('http://localhost:8000/books/' + new_book['id'])
+    response = requests.get(f'http://localhost:8000/books/{new_book["id"]}')
     assert response.status_code == 200
     assert response.json() == new_book
