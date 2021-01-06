@@ -4,11 +4,13 @@
 
 The `next_steps` directory contains several options for extending your test framework:
 - `debugging.md`: explains how to use the Python debugger with pytest
-- `test_jsonschema.py`: validation json with the jsonschema libary
+- `test_jsonschema.py`: validate the response with the jsonschema libary
 - `test_log_to_file.py`: write your test logs to a file
 - `test_parametrization.py`: uses pytest's parametrization to run the same test with different inputs
+- `test_schema_validation.py`: validate the response with the schema library
 - `test_setup_teardown_fixture.py`: uses a fixture to set up date, `yield`s it to the test, removes it in teardown
 - `test_teardown_only.py`: uses a fixture to remove a piece of data created in the test
+- `test_with_testdata_from_file.py`: read data from a file to use in a test
 
 If you want even more options for logging, have a look at a pytest plugin I built: pytest-instrument at
 https://pypi.org/project/pytest-instrument/.
