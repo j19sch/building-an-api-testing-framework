@@ -19,9 +19,9 @@ def test_delete_book(books, creds):
     book_to_delete = books[0]
     user, token = creds
 
-    response = requests.delete('http://localhost:8000/books/{}'.format(book_to_delete['id']),
+    response = requests.delete(f'http://localhost:8000/books/{book_to_delete["id"]}',
                                headers={'user': user, 'token': token})
     assert response.status_code == 200
 
-    response = requests.get('http://localhost:8000/books/{}'.format(book_to_delete['id']))
+    response = requests.get(f'http://localhost:8000/books/{book_to_delete["id"]}')
     assert response.status_code == 404
