@@ -10,19 +10,19 @@ import requests
 # - A handler of the type FileHandler is added to the logger. There are different kinds of handlers in Python;
 #     a FileHandler will write log records to a file.
 #
-# Docs: https://docs.python.org/2.7/library/logging.html and https://docs.python.org/3.7/library/logging.html
+# Docs: https://docs.python.org/3.6/library/logging.html
 
 
 class ApiClient(requests.Session):
     def __init__(self, api_name):
-        super(ApiClient, self).__init__()
+        super().__init__()
         self.hooks['response'].append(self._log_details)
 
         self.logger = logging.getLogger(api_name)  # sets the name of the log node to api_name
         self.logger.setLevel("INFO")
 
         if not self.logger.handlers:  # prevents multiple handlers resulting in duplicate log lines
-            file_handler = logging.FileHandler('./%s.log' % datetime.datetime.now().strftime("%Y%m%dT%H%M%S"), mode='a')
+            file_handler = logging.FileHandler(f'./{datetime.datetime.now().strftime("%Y%m%dT%H%M%S")}.log', mode='a')
             file_handler.setLevel(logging.INFO)
 
             formatter = logging.Formatter('%(asctime)s %(levelname)s - %(name)s - %(message)s', "%H:%M:%S")
@@ -30,42 +30,42 @@ class ApiClient(requests.Session):
             self.logger.addHandler(file_handler)
 
     def _log_details(self, r, *args, **kwargs):
-        self.logger.info("{}: {}".format(r.request.method, r.request.url))
-        self.logger.info("headers: {}".format(r.request.headers))
+        self.logger.info(f"{r.request.method}: {r.request.url}")
+        self.logger.info(f"headers: {r.request.headers}")
         if r.request.body is not None:
-            self.logger.info("request body: {}".format(r.request.body))
+            self.logger.info(f"request body: {r.request.body}")
 
-        self.logger.info("response status: {}, elapsed: {}s".format(r.status_code, r.elapsed.total_seconds()))
-        self.logger.info("headers: {}".format(r.headers))
+        self.logger.info(f"response status: {r.status_code}, elapsed: {r.elapsed.total_seconds()}s")
+        self.logger.info(f"headers: {r.headers}")
         if r.text != "":
-            self.logger.info("response body: {}".format(r.text))
+            self.logger.info(f"response body: {r.text}")
 
 
 class BooksApi(ApiClient):
     def __init__(self):
-        super(BooksApi, self).__init__(self.__class__.__name__)
+        super().__init__(self.__class__.__name__)
         self.url = 'http://localhost:8000/books'
 
     def get_all(self):
         return self.get(self.url)
 
     def get_one_book(self, book_id):
-        return self.get(self.url + '/' + book_id)
+        return self.get(f'{self.url}/{book_id}')
 
     def post_book(self, new_book):
         return self.post(self.url, json=new_book)
 
     def delete_book(self, book_id, user, token):
-        return self.delete(self.url + '/' + book_id, headers={'user': user, 'token': token})
+        return self.delete(f'{self.url}/{book_id}', headers={'user': user, 'token': token})
 
 
 class TokenApi(ApiClient):
     def __init__(self):
-        super(TokenApi, self).__init__(self.__class__.__name__)
+        super().__init__(self.__class__.__name__)
         self.url = self.endpoint = 'http://localhost:8000/token'
 
     def get_token(self, username):
-        return self.post(self.url + '/' + username)
+        return self.post(f'{self.url}/{username}')
 
 
 @pytest.fixture

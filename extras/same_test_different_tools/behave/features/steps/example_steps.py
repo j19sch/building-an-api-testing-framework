@@ -1,5 +1,5 @@
 # -- FILE: features/steps/example_steps.py
-from behave import given, when, then, step
+from behave import given, when, then
 import requests
 
 
@@ -12,13 +12,13 @@ def step_impl(context):
 @given('we have valid credentials')
 def step_impl(context):
     context.user = 'user'
-    response = requests.post("http://localhost:8000/token/{}".format(context.user))
+    response = requests.post(f"http://localhost:8000/token/{context.user}")
     context.token = response.json()['token']
 
 
 @when('we delete one book')
 def step_impl(context):
-    context.response = requests.delete("http://localhost:8000/books/{}".format(context.books[0]['id']),
+    context.response = requests.delete(f"http://localhost:8000/books/{context.books[0]['id']}",
                                        headers={'User': context.user, 'Token': context.token})
 
 
@@ -29,5 +29,5 @@ def step_impl(context):
 
 @then('the book is no longer present')
 def step_impl(context):
-    response = requests.get("http://localhost:8000/books/{}".format(context.books[0]['id']))
+    response = requests.get(f"http://localhost:8000/books/{context.books[0]['id']}")
     assert response.status_code == 404

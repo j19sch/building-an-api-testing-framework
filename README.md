@@ -9,8 +9,7 @@ This app is intended as a practice app for a testing workshop, so I took some sh
 If you run into any issues with the steps below, please let me know at j19sch@gmail.com.
 
 ### Python and VirtualEnv
-- Install Python 3
-    - Preferrably Python 3.6 or 3.7, although older Python 3 versions should work.
+- Install Python 3.6 or higher
     - Instructions: https://ehmatthes.github.io/pcc/chapter_01/README.html (no need to install Geany or Sublime Text)
 - Install virtualenv. Virtualenv allows you to create an isolated Python environment, with full control over which Python version to use and which Python packages to install.
     - If you have only Python 3 installed: `pip install --user virtualenv`. 
