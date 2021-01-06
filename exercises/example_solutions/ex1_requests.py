@@ -14,7 +14,7 @@ print("\n")
 
 response = requests.get('http://localhost:8000/books/8b91b84b-04e4-4496-9635-66468c2f3e41')
 print(response.status_code)
-pprint((response.json()))
+pprint(response.json())
 print("\n")
 
 new_book = {

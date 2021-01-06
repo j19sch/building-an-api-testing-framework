@@ -5,7 +5,7 @@ import requests
 @pytest.fixture(scope="session")
 def creds():
     user = 'bob'
-    response = requests.post('http://localhost:8000/token/' + user)
+    response = requests.post(f'http://localhost:8000/token/{user}')
     token = response.json()['token']
     return user, token
 
@@ -30,8 +30,8 @@ def new_book_id():
 def test_delete_book(new_book_id, creds):
     user, token = creds
 
-    response = requests.delete('http://localhost:8000/books/' + new_book_id, headers={'user': user, 'token': token})
+    response = requests.delete(f'http://localhost:8000/books/{new_book_id}', headers={'user': user, 'token': token})
     assert response.status_code == 200
 
-    response = requests.get('http://localhost:8000/books/' + new_book_id)
+    response = requests.get(f'http://localhost:8000/books/{new_book_id}')
     assert response.status_code == 404
