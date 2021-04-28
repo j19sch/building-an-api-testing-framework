@@ -16,7 +16,7 @@ You can define a class as follows:
 ```python
 import requests
 
-class MyClass(object):  # class MyClass(): in Python 3
+class MyClass:
     def __init__(self):
         # this code is run when instantiating the class my_class = MyClass()
         # one thing you can do here, is store the endpoint of the url:

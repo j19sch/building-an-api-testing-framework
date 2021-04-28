@@ -25,7 +25,7 @@ Docs: https://docs.pytest.org/en/latest/getting-started.html#create-your-first-t
 You can use `assert <actual value> == <expected value>` to check actual values against expected values.
 In general it's not needed to add an assert message, since Pytest does a great job
 reporting on failed tests. If you do want an assert message: `assert actual == expected, "actual did not equal expected"`
-or `assert actual == expected, "value of actual: {} does not equal value of expected: {}".format(actual, expected)`
+or `assert actual == expected, f"value of actual: {actual} does not equal value of expected: {expected}"`
 
 ### Pytest output
 Pytest is rather verbose in its output when tests fail. You can see examples of failure reports

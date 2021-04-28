@@ -13,8 +13,9 @@ In the next exercise, we will look at a more generic and more maintainable way t
 To create log records, you'll need to import the logging module. After that you can easily create
 log records of different log levels, e.g. `logging.info("all good")` or `logging.critical("run away!")`
 
-When a test results in an error or a fail, pytest will automatically output the created log records.
-If you want to see the log records regardless of the test result, use `pytest --log-cli-level debug`.
+When a test results in an error or a fail, pytest will automatically output log records that were created
+on level `WARNING` and higher. If you want to see all log records regardless of the test result, use
+`pytest --log-cli-level debug`.
 
 Docs:
 - https://docs.python.org/2/library/logging.html

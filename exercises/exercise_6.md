@@ -30,7 +30,7 @@ import requests
 
 class ApiClient(requests.Session):
     def __init__(self):
-        super(ApiClient, self).__init__()  # initialises parent class; in Python 3: super().__init__()
+        super().__init__()
         self.hooks['response'].append(self._log_details)  # for every response the _log_details() method will be called
         
     @staticmethod

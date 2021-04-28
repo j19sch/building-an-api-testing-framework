@@ -39,8 +39,8 @@ Docs for the requests library: http://docs.python-requests.org/en/master/
 
 ### Printing text to the screen
 To print text to the screen, use `print(<string>)`.  
-If you need string interpolation, use the `format()` function:
-`print("value a is {}, value of b is {}".format(a, b))`  
+If you need string interpolation, use f-strings:  
+`print(f"value a is {a}, value of b is {b}")` (Note the `f` before the opening quotes.)  
 
 To make printed dictionaries (and other data structures) more readable, use `pprint`:  
 ```
@@ -51,5 +51,5 @@ pprint(<dictionary>)
 And if you want to combine pretty-printing with string interpolation:
 ```
 from pprint import pformat
-print("dictionary: {}".format(pformat(<dictionary>)))
+print(f"dictionary: {pformat(<dictionary>)}")
 ```
