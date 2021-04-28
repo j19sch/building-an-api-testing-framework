@@ -1,7 +1,6 @@
 import jsonschema
 import requests
 
-
 # The three dictionaries below define json schema's, which are used in the tests to check the format of the responses.
 # Json schema docs: https://python-jsonschema.readthedocs.io/en/latest/
 #
@@ -29,13 +28,12 @@ book_definition = {
         "pages": {
             "type": "integer"
         }
-
     },
-    "required": ["title", "sub_title", "author", "publisher", "year", "pages"]
+    "required": ["title", "sub_title", "author", "publisher", "year", "pages"],
+    "additionalProperties": "false"
 }
 
 schema_book = book_definition
-
 
 schema_books = {
     "type": "array",

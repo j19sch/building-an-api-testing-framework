@@ -39,3 +39,5 @@ def test_create_a_book(books_to_delete):
     assert response.status_code == 201
 
     books_to_delete.append(response.json()['id'])
+
+    # ToDo: add additional asserts/validatrions here
