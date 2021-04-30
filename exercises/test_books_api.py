@@ -1,24 +1,14 @@
 import requests
 import pytest
 
-class TestKnockknockApi:
-    @pytest.fixture
-    def fixture(self):
-        return requests.get('http://localhost:8000/knockknock')
-
-    def test_status_code_is_ok(self, fixture):
-        assert fixture.status_code == 200
-    
-    def test_response_is_correct(self, fixture):
-        assert fixture.text == 'Who\'s there?'
-
 class TestBooksApi:
-    @pytest.fixture
+    @pytest.fixture(scope="class")
     def fixture(self):
         return requests.get('http://localhost:8000/books')
 
-    @pytest.fixture
+    @pytest.fixture(scope="class")
     def post_fixture(self):
+        # setup
         payload = {
             'title': 'New book',
             'sub_title': 'New book sub title',
@@ -29,11 +19,21 @@ class TestBooksApi:
         }
         response = requests.post('http://localhost:8000/books', json=payload)
         response_body = response.json()
+        id = response_body["id"]
         
         assert response_body is not None
-        assert response_body["id"] is not None
+        assert id is not None
 
-        return (response, response_body)
+        payload["id"] = id
+
+        yield (response.status_code, response_body, payload)
+
+        # teardown
+        user = 'bob'
+        response = requests.post(f'http://localhost:8000/token/{user}')
+        token = response.json()['token']
+        response = requests.delete(f'http://localhost:8000/books/{id}', headers={'user': user, 'token': token})
+        assert response.status_code == 200
 
     def test_status_code_is_ok(self, fixture):
         assert fixture.status_code == 200
@@ -43,25 +43,13 @@ class TestBooksApi:
         assert response_body[0]['id'] == '9b30d321-d242-444f-b2db-884d04a4d806'
 
     def test_book_store_request_is_successful(self, post_fixture):
-        response, _ = post_fixture
-        assert response.status_code == 201
+        status_code, _, _ = post_fixture
+        assert status_code == 201
 
     def test_book_is_stored(self, post_fixture):
-        _, response_body = post_fixture
+        _, response_body, payload = post_fixture
 
         respponse = requests.get(f'http://localhost:8000/books/{response_body["id"]}')
         response_body = respponse.json()
         assert response_body is not None
-        assert response_body["title"] == 'New book'
-
-class TestBookApi:
-    @pytest.fixture
-    def fixture(self):
-        return requests.get('http://localhost:8000/books/9b30d321-d242-444f-b2db-884d04a4d806')
-
-    def test_status_code_is_ok(self, fixture):
-        assert fixture.status_code == 200
-    
-    def test_book_has_correct_title(self, fixture):
-        response_body = fixture.json()
-        assert response_body['title'] == 'Perfect Software And Other Illusions About Testing'
+        assert response_body == payload

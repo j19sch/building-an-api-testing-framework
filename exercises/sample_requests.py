@@ -1,24 +1,24 @@
 import requests
 
-def printResponse(funcName, response):
+def print_response(funcName, response):
     print(f"[{funcName}] Status: {response.status_code}")
     print(f"[{funcName}] Response: {response.text}")
 
 
 def getKnockknockRequest():
     response = requests.get('http://localhost:8000/knockknock')
-    printResponse(getKnockknockRequest.__name__, response)
+    print_response(getKnockknockRequest.__name__, response)
 
 
 def getBooksRequest():
     response = requests.get('http://localhost:8000/books')
-    printResponse(getBooksRequest.__name__, response)
+    print_response(getBooksRequest.__name__, response)
 
 
 def getBookRequest():
     response = requests.get(
         'http://localhost:8000/books/9b30d321-d242-444f-b2db-884d04a4d806')
-    printResponse(getBookRequest.__name__, response)
+    print_response(getBookRequest.__name__, response)
 
 
 def postBookRequest():
@@ -31,11 +31,11 @@ def postBookRequest():
         'pages': 53
     }
     response = requests.post('http://localhost:8000/books', json=payload)
-    printResponse(postBookRequest.__name__, response)
+    print_response(postBookRequest.__name__, response)
 
 def postTokenRequest():
     response = requests.post('http://localhost:8000/token/Dmytro.Titenko')
-    printResponse(postTokenRequest.__name__, response)
+    print_response(postTokenRequest.__name__, response)
 
 
 getKnockknockRequest()
