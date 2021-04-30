@@ -2,7 +2,7 @@ import pytest
 from . import books_client
 
 class TestBookApi:
-    @pytest.fixture
+    @pytest.fixture(scope="class")
     def fixture(self):
         client = books_client.Books()
         return client.get_book('9b30d321-d242-444f-b2db-884d04a4d806')

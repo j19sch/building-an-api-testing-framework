@@ -10,7 +10,15 @@ class TestBooksApi:
         return self.client.get_all()
 
     @pytest.fixture(scope="class")
-    def post_fixture(self):
+    def creds(self):
+        user = 'bob'
+        tokenClient = token_client.Token()
+        response = tokenClient.create_token(user)
+        token = response.json()['token']
+        return user, token
+
+    @pytest.fixture(scope="class")
+    def new_book(self, creds):
         # setup
         payload = {
             'title': 'New book',
@@ -32,10 +40,7 @@ class TestBooksApi:
         yield (response.status_code, response_body, payload)
 
         # teardown
-        user = 'bob'
-        tokenClient = token_client.Token()
-        response = tokenClient.create_token(user)
-        token = response.json()['token']
+        user, token = creds
         response = self.client.delete_book(id, user, token)
         assert response.status_code == 200
 
@@ -46,12 +51,12 @@ class TestBooksApi:
         response_body = fixture.json()
         assert len(response_body) > 0
 
-    def test_book_store_request_is_successful(self, post_fixture):
-        status_code, _, _ = post_fixture
+    def test_book_store_request_is_successful(self, new_book):
+        status_code, _, _ = new_book
         assert status_code == 201
 
-    def test_book_is_stored(self, post_fixture):
-        _, response_body, payload = post_fixture
+    def test_book_is_stored(self, new_book):
+        _, response_body, payload = new_book
 
         respponse = self.client.get_book(response_body["id"])
         response_body = respponse.json()
