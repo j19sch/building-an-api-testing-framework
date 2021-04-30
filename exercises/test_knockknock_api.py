@@ -1,10 +1,11 @@
-import requests
 import pytest
+from . import knockknock_client
 
 class TestKnockknockApi:
-    @pytest.fixture
+    @pytest.fixture(scope="class")
     def fixture(self):
-        return requests.get('http://localhost:8000/knockknock')
+        client = knockknock_client.KnockKnock()
+        return client.knock()
 
     def test_status_code_is_ok(self, fixture):
         assert fixture.status_code == 200

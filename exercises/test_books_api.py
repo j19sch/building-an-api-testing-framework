@@ -1,10 +1,13 @@
-import requests
 import pytest
+from . import books_client
+from . import token_client
 
 class TestBooksApi:
+    client = books_client.Books()
+
     @pytest.fixture(scope="class")
     def fixture(self):
-        return requests.get('http://localhost:8000/books')
+        return self.client.get_all()
 
     @pytest.fixture(scope="class")
     def post_fixture(self):
@@ -17,7 +20,7 @@ class TestBooksApi:
             'year': 2021,
             'pages': 53
         }
-        response = requests.post('http://localhost:8000/books', json=payload)
+        response = self.client.add_book(payload)
         response_body = response.json()
         id = response_body["id"]
         
@@ -30,9 +33,10 @@ class TestBooksApi:
 
         # teardown
         user = 'bob'
-        response = requests.post(f'http://localhost:8000/token/{user}')
+        tokenClient = token_client.Token()
+        response = tokenClient.create_token(user)
         token = response.json()['token']
-        response = requests.delete(f'http://localhost:8000/books/{id}', headers={'user': user, 'token': token})
+        response = self.client.delete_book(id, user, token)
         assert response.status_code == 200
 
     def test_status_code_is_ok(self, fixture):
@@ -40,7 +44,7 @@ class TestBooksApi:
     
     def test_books_contains_the_book(self, fixture):
         response_body = fixture.json()
-        assert response_body[0]['id'] == '9b30d321-d242-444f-b2db-884d04a4d806'
+        assert len(response_body) > 0
 
     def test_book_store_request_is_successful(self, post_fixture):
         status_code, _, _ = post_fixture
@@ -49,7 +53,7 @@ class TestBooksApi:
     def test_book_is_stored(self, post_fixture):
         _, response_body, payload = post_fixture
 
-        respponse = requests.get(f'http://localhost:8000/books/{response_body["id"]}')
+        respponse = self.client.get_book(response_body["id"])
         response_body = respponse.json()
         assert response_body is not None
         assert response_body == payload
