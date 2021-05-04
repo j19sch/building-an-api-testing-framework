@@ -1,5 +1,6 @@
 import pytest
 import jsonschema
+import yaml
 from . import books_client
 from . import token_client
 
@@ -14,18 +15,16 @@ class TestBookApi:
         response = self.token_api.create_token(user)
         token = response.json()['token']
         return user, token
+    
+    @pytest.fixture(scope="class")
+    def books_data(self):
+        with open('./extras/next_steps/testdata.yml') as testdata:
+            return yaml.full_load(testdata)
 
     @pytest.fixture(scope="class")
-    def new_book(self, creds):
+    def new_book(self, creds, books_data):
         # setup
-        payload = {
-            'title': 'New book',
-            'sub_title': 'New book sub title',
-            'author': 'Dmytro Titenko',
-            'publisher': 'Mendix',
-            'year': 2021,
-            'pages': 53
-        }
+        payload = books_data["books"]["book_1"]
         response = self.books_api.add_book(payload)
         assert response.status_code == 201
 

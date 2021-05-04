@@ -1,0 +1,8 @@
+books:
+  book_1:
+    title: The Master and Margarita
+    sub_title: null
+    author: 	Mikhail Bulgakov
+    pages: 560
+    year: 1966
+    publisher: YMCA Press
