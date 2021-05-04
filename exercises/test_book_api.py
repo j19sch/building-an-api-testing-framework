@@ -1,11 +1,12 @@
 import pytest
+import jsonschema
 from . import books_client
 from . import token_client
 
 class TestBookApi:
     books_api = books_client.Books()
     token_api = token_client.Token()
-    
+
     @pytest.fixture(scope="class")
     def creds(self):
         user = 'bob'
@@ -25,11 +26,11 @@ class TestBookApi:
             'pages': 53
         }
         response = self.books_api.add_book(payload)
-        assert response.status_code  == 201
+        assert response.status_code == 201
 
         response_body = response.json()
         assert response_body is not None
-        
+
         id = response_body["id"]
         assert id is not None
         payload["id"] = id
@@ -41,11 +42,44 @@ class TestBookApi:
         response = self.books_api.delete_book(id, user, token)
         assert response.status_code == 200
 
+    @pytest.fixture(scope="class")
+    def schema_book(self):
+        schema = {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "sub_title": {
+                    "type": ["string", "null"],
+                },
+                "author": {
+                    "type": "string"
+                },
+                "publisher": {
+                    "type": "string"
+                },
+                "year": {
+                    "type": "integer"
+                },
+                "pages": {
+                    "type": "integer"
+                }
+            },
+            "required": ["title", "sub_title", "author", "publisher", "year", "pages"]
+        }
+        return schema
+
     def test_status_code_is_ok(self, new_book):
         response, _ = new_book
         assert response.status_code == 200
-    
+
     def test_book_has_correct_title(self, new_book):
         response, payload = new_book
         response_body = response.json()
         assert response_body == payload
+    
+    def test_response_has_valid_schema(self, new_book, schema_book):
+        response, _ = new_book
+        response_body = response.json()
+        jsonschema.validate(response_body, schema_book)
