@@ -10,6 +10,9 @@ import requests
 book_definition = {
     "type": "object",
     "properties": {
+        "id": {
+            "type": "string"
+        },
         "title": {
             "type": "string"
         },
@@ -30,7 +33,7 @@ book_definition = {
         }
     },
     "required": ["title", "sub_title", "author", "publisher", "year", "pages"],
-    "additionalProperties": "false"
+    "additionalProperties": False
 }
 
 schema_book = book_definition
