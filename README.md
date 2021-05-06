@@ -49,6 +49,12 @@ Important: perform the steps below with your virtual environment activated.
 - smoke test by using your browser to go to `localhost:8000/knockknock`
 - the easiest way to restart the app is to kill the process (`ctrl/cmd+c`) and start it again
 
+#### Docker
+If you have Docker installed, you can also run the app in a Docker container:
+- build: `docker build -f api_app/Dockerfile -t api-app .`
+- run: `docker run -p 80:80 api-app`
+- smoke test by using your browser to go to `localhost:80/knockknock`
+
 ### Advanced text editor
 - Any advanced text editor with the following features will do:
     - syntax highlighting (easier to read)
