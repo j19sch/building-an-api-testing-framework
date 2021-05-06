@@ -23,7 +23,3 @@ using different tools:
 - pytest and requests: run with `pytest <path>`, i.e. `pytest extras/same_test_different_tools/pytest/`
 - robot framework with robotframework-requests:  run with `robot <path>`, i.e. `robot extras/same_test_different_tools/robot-framework/`
 - tavern:  run with  `pytest <path>`, i.e. `pytest extras/same_test_different_tools/tavern`
-
-
-ToDo:
-- create book to delete in test, instead of deleting first one of retrieved books
