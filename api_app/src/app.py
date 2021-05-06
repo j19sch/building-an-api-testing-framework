@@ -2,12 +2,12 @@ import falcon
 
 from api_app.src import knockknock, books, token
 
-api = application = falcon.API()
+app = falcon.App()
 
 
-api.add_route('/knockknock', knockknock.Ping())
+app.add_route('/knockknock', knockknock.Ping())
 
-api.add_route('/books', books.Books())
-api.add_route('/books/{book_id}', books.Book())
+app.add_route('/books', books.Books())
+app.add_route('/books/{book_id}', books.Book())
 
-api.add_route('/token/{user}', token.Token())
+app.add_route('/token/{user}', token.Token())
