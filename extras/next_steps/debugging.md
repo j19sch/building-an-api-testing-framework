@@ -55,3 +55,9 @@ More info: https://github.com/inducer/pudb
 The PyCharm IDE supports pytest, allowing you to run and debug tests from the IDE itself.
 
 More info: https://www.jetbrains.com/help/pycharm/pytest.html
+
+
+### Visual Studio Code
+Visual Studio Code supports pytest, allowing you to run and debug tests from the IDE itself.
+
+More info: https://code.visualstudio.com/docs/python/testing#_debug-tests
