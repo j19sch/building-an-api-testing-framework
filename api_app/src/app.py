@@ -2,8 +2,7 @@ import falcon
 
 from api_app.src import knockknock, books, token
 
-app = falcon.App()
-
+app = application = falcon.App()
 
 app.add_route('/knockknock', knockknock.Ping())
 

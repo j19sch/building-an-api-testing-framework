@@ -45,7 +45,7 @@ Important: perform the steps below with your virtual environment activated.
 ### Running the app
 Important: perform the steps below with your virtual environment activated.
 
-- linux, mac: `gunicorn api_app.src.app` or win: `waitress-serve --port=8000 api_app.src.app:api`
+- linux, mac: `gunicorn api_app.src.app` or win: `waitress-serve --port=8000 api_app.src.app:app`
 - smoke test by using your browser to go to `localhost:8000/knockknock`
 - the easiest way to restart the app is to kill the process (`ctrl/cmd+c`) and start it again
 
