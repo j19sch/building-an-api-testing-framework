@@ -18,7 +18,6 @@ on level `WARNING` and higher. If you want to see all log records of level `INFO
 regardless of the test result, use `pytest --log-cli-level info`.
 
 Docs:
-- https://docs.python.org/2/library/logging.html
 - https://docs.python.org/3/library/logging.html
 - https://docs.pytest.org/en/latest/logging.html
 
