@@ -6,23 +6,23 @@ host: `http://localhost:8000` (Note: `https` is not supported.)
 **GET /knockknock**  
 request body: none
 
-return code: 200  
-return body: (string)
+response status code: 200  
+response body: (string)
 
 
 ## /books
 **GET /books**  
 request body: none
 
-return code: 200  
-return body: list of books (json)
+response status code: 200  
+response body: list of books (json)
 
 
 **GET /books/{book-id}**  
 request body: none
 
-return code: 200  
-return body: book (json)
+response status code: 200  
+response body: book (json)
 
 example response:
 ```
@@ -41,8 +41,8 @@ example response:
 **POST /books**  
 request body: book details (no id) (json)
 
-return code: 201  
-return body: id of created book (json)
+response status code: 201  
+response body: id of created book (json)
 
 example response:
 ```
@@ -56,23 +56,24 @@ example response:
 request body: none
 
 requires token  
-return code: 200
+response status code: 200
+response body: none
 
 
 **PUT /books/{book-id}**
 requires token    
 request body: book details (no id) (json)  
 
-return code: 200  
-return body: updated book (json)
+response status code: 200  
+response body: updated book (json)
 
 
 ## /token
 **POST /token/{user}**  
 request body: none  
 
-return code: 201  
-return body: token (json)
+response status code: 201  
+response body: token (json)
   
 example response:
 ```
