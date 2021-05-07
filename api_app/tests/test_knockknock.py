@@ -2,12 +2,12 @@ import falcon
 from falcon import testing
 import pytest
 
-from api_app.src.app import api
+from api_app.src.app import app
 
 
 @pytest.fixture
 def client():
-    return testing.TestClient(api)
+    return testing.TestClient(app)
 
 
 def test_knockknock(client):

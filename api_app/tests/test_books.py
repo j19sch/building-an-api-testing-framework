@@ -4,13 +4,13 @@ import pytest
 
 import uuid
 
-from api_app.src.app import api
+from api_app.src.app import app
 from api_app.src.data import BOOKS
 
 
 @pytest.fixture
 def client():
-    return testing.TestClient(api)
+    return testing.TestClient(app)
 
 
 @pytest.fixture

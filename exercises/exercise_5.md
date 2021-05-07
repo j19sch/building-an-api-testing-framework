@@ -14,11 +14,10 @@ To create log records, you'll need to import the logging module. After that you 
 log records of different log levels, e.g. `logging.info("all good")` or `logging.critical("run away!")`
 
 When a test results in an error or a fail, pytest will automatically output log records that were created
-on level `WARNING` and higher. If you want to see all log records regardless of the test result, use
-`pytest --log-cli-level debug`.
+on level `WARNING` and higher. If you want to see all log records of level `INFO` and higher (so no `DEBUG`)
+regardless of the test result, use `pytest --log-cli-level info`.
 
 Docs:
-- https://docs.python.org/2/library/logging.html
 - https://docs.python.org/3/library/logging.html
 - https://docs.pytest.org/en/latest/logging.html
 

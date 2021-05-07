@@ -9,7 +9,7 @@ The `next_steps` directory contains several options for extending your test fram
 - `test_parametrization.py`: uses pytest's parametrization to run the same test with different inputs
 - `test_schema_validation.py`: validate the response with the schema library
 - `test_setup_teardown_fixture.py`: uses a fixture to set up date, `yield`s it to the test, removes it in teardown
-- `test_teardown_only.py`: uses a fixture to remove a piece of data created in the test
+- `test_teardown_only_fixture.py`: uses a fixture to remove a piece of data created in the test
 - `test_with_testdata_from_file.py`: read data from a file to use in a test
 
 If you want even more options for logging, have a look at a pytest plugin I built: pytest-instrument at
@@ -23,7 +23,3 @@ using different tools:
 - pytest and requests: run with `pytest <path>`, i.e. `pytest extras/same_test_different_tools/pytest/`
 - robot framework with robotframework-requests:  run with `robot <path>`, i.e. `robot extras/same_test_different_tools/robot-framework/`
 - tavern:  run with  `pytest <path>`, i.e. `pytest extras/same_test_different_tools/tavern`
-
-
-ToDo:
-- create book to delete in test, instead of deleting first one of retrieved books

@@ -1,11 +1,11 @@
 # needed for exercises
-falcon
+falcon==3.0.0
 pytest
 requests
 
-# also needed for exercises:
-# gunciorn (linux, mac)
-# waitress (windows)
+# also needed for exercises, uncomment the line releveant to your OS:
+# gunciorn==20.0.4  # (linux, mac)
+# waitress==2.0.0  # (windows)
 
 # additionally needed for extras/next_steps:
 jsonschema
